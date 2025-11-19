@@ -18,13 +18,9 @@ from .tp_translator import translate_triple_pattern_tuple
 
 
 class COTTASStore(Store):
-    """An implementation of a Store over a COTTAS document.
-
-    It is heavily inspired by the work from @FlorianLudwig (https://github.com/RDFLib/rdflib/issues/894) and adapted
-    from rdflib-hdt (https://github.com/RDFLib/rdflib-hdt).
-
-    Args:
-      - path: Absolute path to the COTTAS file to load.
+    """
+    - guardar en variable el path al config.ini para después poder pasárselo a morph_kgc al materializar las reglas
+    - carga inicial de los mappings con retrieve_mappings(.) -> nos interesa el rml_df
     """
     def __init__(self, path: str, configuration=None, identifier=None):
         super(COTTASStore, self).__init__(configuration=configuration, identifier=identifier)
@@ -33,43 +29,16 @@ class COTTASStore(Store):
             raise Exception(f"{path} is not a valid COTTAS file.")
 
         self._cottas_path = path
-        duckdb.query(
-            f"SET parquet_metadata_cache=true; SET enable_progress_bar=false; SELECT * FROM PARQUET_SCAN('{path}')")
-        self._num_triples = duckdb.execute(f"SELECT COUNT(*) FROM PARQUET_SCAN('{path}')").fetchone()[0]
-        self._is_quad_table = 'g' in [res[0] for res in duckdb.execute(
-            f"DESCRIBE SELECT * FROM PARQUET_SCAN('{path}') LIMIT 1").fetchall()]
 
-    @property
-    def cottas_file(self) -> str:
-        """The COTTAS file path."""
-        return self._cottas_path
-
-    @property
-    def is_quad_table(self) -> str:
-        """Whether the table has named graphs."""
-        return self._is_quad_table
-
-    def __len__(self, context) -> int:
-        """The number of RDF triples in the COTTAS store."""
-        return self._num_triples
-
-    @property
-    def nb_subjects(self) -> int:
-        """The number of subjects in the COTTAS store."""
-        return duckdb.execute(f"SELECT COUNT(DISTINCT s) FROM PARQUET_SCAN('{self._cottas_path}')").fetchone()[0]
-
-    @property
-    def nb_predicates(self) -> int:
-        """The number of predicates in the COTTAS store."""
-        return duckdb.execute(f"SELECT COUNT(DISTINCT p) FROM PARQUET_SCAN('{self._cottas_path}')").fetchone()[0]
-
-    @property
-    def nb_objects(self) -> int:
-        """The number of objects in the COTTAS store."""
-        return duckdb.execute(f"SELECT COUNT(DISTINCT o) FROM PARQUET_SCAN('{self._cottas_path}')").fetchone()[0]
 
     def triples(self, pattern, context) -> Iterable[Triple]:
-        """Search for a triple pattern in a COTTAS store.
+        """Search for a triple pattern in the mappings and materialize the triples matching the mappings.
+
+        1. Matchear el *pattern* con rml_df -> obtiene un rml_df con menos reglas
+        2. Ejecutar morph_kgc el rml_df que se ha macheado -> obtiene un grafo de RDFlib
+        3. A partir del grafo de rdflib anterior crear un dataframe de tripletas con columnas S, P, O (esto no se debería hacer pero nos vale de momento)
+        4. Filtrar el dataframe de tripletas con el pattern (utilizando los términos qu estén bounded, es decir, los que no son variables)
+        5. Devolver las tripletas (yield triples)
 
         Args:
           - pattern: The triple pattern (s, p, o) to search.
@@ -83,22 +52,22 @@ class COTTASStore(Store):
         return
 
     def create(self, configuration):
-        raise TypeError('The COTTAS store is read only!')
+        raise TypeError('The virt store is read only!')
 
     def destroy(self, configuration):
-        raise TypeError('The COTTAS store is read only!')
+        raise TypeError('The virt store is read only!')
 
     def commit(self):
-        raise TypeError('The COTTAS store is read only!')
+        raise TypeError('The virt store is read only!')
 
     def rollback(self):
-        raise TypeError('The COTTAS store is read only!')
+        raise TypeError('The virt store is read only!')
 
     def add(self, _, context=None, quoted=False):
-        raise TypeError('The COTTAS store is read only!')
+        raise TypeError('The virt store is read only!')
 
     def addN(self, quads):
-        raise TypeError('The COTTAS store is read only!')
+        raise TypeError('The virt store is read only!')
 
     def remove(self, _, context):
-        raise TypeError('The COTTAS store is read only!')
+        raise TypeError('The virt store is read only!')
