@@ -93,7 +93,7 @@ class COTTASStore(Store):
             for _, row in df.iterrows():
                 yield (row["S"], row["P"], row["O"])
 
-        return yield_triples(filtered_df)
+            return yield_triples(filtered_df)
 
         for triple in duckdb.execute(translate_triple_pattern_tuple(self._cottas_path, pattern)).fetchall():
             triple = from_n3(triple[0]), from_n3(triple[1]), from_n3(triple[2])
