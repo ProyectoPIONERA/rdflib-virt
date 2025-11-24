@@ -88,17 +88,13 @@ class COTTASStore(Store):
         
         filtered_df = filtered_triples(df)
 
-        #5. Yield triples filtered
-        def yield_triples(df: pd.DataFrame):
-            for _, row in df.iterrows():
-                yield (row["S"], row["P"], row["O"])
-
-            return yield_triples(filtered_df)
-
-        for triple in duckdb.execute(translate_triple_pattern_tuple(self._cottas_path, pattern)).fetchall():
-            triple = from_n3(triple[0]), from_n3(triple[1]), from_n3(triple[2])
-            yield triple, None
-        return
+        # 5. Yield triples filtered
+        for _, row in filtered_df.iterrows():
+            yield (
+                from_n3(row["S"]),
+                from_n3(row["P"]),
+                from_n3(row["O"])
+            ), None
 
     def create(self, configuration):
         raise TypeError('The virt store is read only!')
