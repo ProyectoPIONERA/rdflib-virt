@@ -7,29 +7,37 @@ __email__ = "julian.arenas.guerrero@upm.es"
 
 
 import duckdb
-
 from typing import Iterable
+from rdflib import Graph
+import rdflib
+import pandas as pd
 from rdflib.store import Store
 from rdflib.util import from_n3
-
+from morph_kgc.mapping.mapping_parser import retrieve_mappings
+from morph_kgc.mapping.mapping_parser import MappingParser
+from morph_kgc.__init__ import materialize
 from .utils import verify_cottas_file
 from .types import Triple
 from .tp_translator import translate_triple_pattern_tuple
+from .rml_ttl import rml_df_to_ttl
+import re
 
+
+config_path = "config.ini"
 
 class COTTASStore(Store):
     """
     - guardar en variable el path al config.ini para después poder pasárselo a morph_kgc al materializar las reglas
     - carga inicial de los mappings con retrieve_mappings(.) -> nos interesa el rml_df
     """
+
     def __init__(self, path: str, configuration=None, identifier=None):
-        super(COTTASStore, self).__init__(configuration=configuration, identifier=identifier)
+        super().__init__(configuration=configuration, identifier=identifier)
 
         if not verify_cottas_file(path):
             raise Exception(f"{path} is not a valid COTTAS file.")
 
-        self._cottas_path = path
-
+        self.config_path = path
 
     def triples(self, pattern, context) -> Iterable[Triple]:
         """Search for a triple pattern in the mappings and materialize the triples matching the mappings.
@@ -46,6 +54,47 @@ class COTTASStore(Store):
 
         Returns: An iterator that produces RDF triples matching the input triple pattern.
         """
+
+        parser = MappingParser(self.config_path)
+        self.config = parser.get_config()
+        #1. Retrieve mappings to get rml_df filtered
+        rml_df, _, _ = retrieve_mappings(self.config)
+
+        #2. transform rml_df filtered to a .ttl and materialize to get a graph
+        rml_df_ttl = rml_df_to_ttl(rml_df, "rml_turtled.ttl")
+        rdf_graph = materialize(rml_df_ttl, config=self.config)
+
+        #3. convert graph into dataframe
+        triples = [
+            {"S": str(s), "P": str(p), "O": str(o)}
+            for s, p, o in rdf_graph.triples((None, None, None))
+        ]       
+
+        df = pd.DataFrame(triples)
+
+        #4. Filter dataframe with pattern (bounded terms)
+        def filtered_triples(df: pd.DataFrame, pattern: str) -> pd.DataFrame:
+
+            def is_bound(term):
+                # Variable if has {, }, $, ?
+                return not re.search(r'[\{\}\$\?]', term)
+            
+            mask = df.apply(lambda row: any(
+                is_bound(row[col]) and re.search(pattern, row[col])
+                for col in ['S','P','O']
+            ), axis=1)
+
+            return df[mask].reset_index(drop=True)
+        
+        filtered_df = filtered_triples(df)
+
+        #5. Yield triples filtered
+        def yield_triples(df: pd.DataFrame):
+            for _, row in df.iterrows():
+                yield (row["S"], row["P"], row["O"])
+
+        return yield_triples(filtered_df)
+
         for triple in duckdb.execute(translate_triple_pattern_tuple(self._cottas_path, pattern)).fetchall():
             triple = from_n3(triple[0]), from_n3(triple[1]), from_n3(triple[2])
             yield triple, None
