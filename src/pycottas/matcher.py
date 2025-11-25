@@ -6,7 +6,7 @@ RML = Namespace("http://w3id.org/rml/")
 RR  = Namespace("http://www.w3.org/ns/r2rml#")
 RDF = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
 
-OUTPUT_FILE = "resultado_final_matching.txt"
+OUTPUT_FILE = "resultado_matching.txt"
 
 # === Query corregida unificada ===
 QUERY = """
