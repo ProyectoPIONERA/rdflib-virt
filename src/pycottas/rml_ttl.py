@@ -21,7 +21,7 @@ rml_df.to_csv("output_rml.csv", index=False)
 
 print("✔ Archivo generado: output_rml.csv")
 
-def rml_df_to_ttl(csv_path, ttl_path="mapping_rml_full.ttl"):
+def rml_df_to_ttl(csv_path, ttl_path):
     """
     Convierte un CSV de rml_df a un mapping Turtle RML formal.
     Genera predicateObjectMap exactamente según object_map_value y predicate_map_value.
@@ -33,7 +33,7 @@ def rml_df_to_ttl(csv_path, ttl_path="mapping_rml_full.ttl"):
         f.write("@prefix rml: <http://w3id.org/rml/> .\n")
         f.write("@prefix rr: <http://www.w3.org/ns/r2rml#> .\n")
         f.write("@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n")
-        f.write("@prefix ub: <http://example.com/ontology#> .\n\n")
+        f.write("@prefix ub: <http://swat.cse.lehigh.edu/onto/univ-bench.owl#> .\n\n")
 
         for _, row in df.iterrows():
             tm_id = row["triples_map_id"]
@@ -52,22 +52,22 @@ def rml_df_to_ttl(csv_path, ttl_path="mapping_rml_full.ttl"):
             obj_termtype = row.get("object_termtype") if pd.notna(row.get("object_termtype")) else "http://w3id.org/rml/IRI"
 
             if "constant" in obj_type:
-                f.write(f"        rml:objectMap [ rml:constant {obj_val} ; rml:termType {obj_termtype} ]\n")
+                f.write(f"        rml:objectMap [ rml:constant {obj_val} ]\n")
             elif "template" in obj_type:
-                f.write(f"        rml:objectMap [ rml:template {obj_val} ; rml:termType {obj_termtype} ]\n")
+                f.write(f"        rml:objectMap [ rml:template {obj_val} ]\n")
             elif "reference" in obj_type:
-                f.write(f"        rml:objectMap [ rml:reference {obj_val} ; rml:termType {obj_termtype} ]\n")
+                f.write(f"        rml:objectMap [ rml:reference {obj_val} ]\n")
 
             # Predicate Map
             pred_type = row.get("predicate_map_type", "").lower()
             pred_val = row.get("predicate_map_value")
             pred_termtype = "http://w3id.org/rml/IRI"
 
-            f.write(f"        rml:predicateMap [ rml:constant {pred_val} ; rml:termType {pred_termtype} ]\n")
+            f.write(f"        rml:predicateMap [ rml:constant {pred_val} ]\n")
             f.write("    ] ;\n")
 
             # Subject Map
-            f.write(f'    rml:subjectMap [ rml:template "{row["subject_map_value"]}" ; rml:termType rml:IRI ] .\n\n')
+            f.write(f'    rml:subjectMap [ rml:template "{row["subject_map_value"]}" ] .\n\n')
 
     print(f"✅ Mapping TTL limpio generado: {ttl_path}")
 
