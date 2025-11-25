@@ -1,4 +1,25 @@
 import pandas as pd
+from morph_kgc.config import Config
+from morph_kgc.mapping.mapping_parser import retrieve_mappings
+
+# 1️⃣ Crear objeto Config SIN pasar aún el archivo
+config = Config()
+
+# 2️⃣ Leer config.ini
+config.read("config.ini")
+
+# 3️⃣ Completar valores por defecto (esto es obligatorio)
+config.complete_configuration_with_defaults()
+
+# 4️⃣ Validar configuración
+config.validate_configuration_section()
+
+# 5️⃣ Obtener mappings
+rml_df, _, _ = retrieve_mappings(config)
+
+rml_df.to_csv("output_rml.csv", index=False)
+
+print("✔ Archivo generado: output_rml.csv")
 
 def rml_df_to_ttl(csv_path, ttl_path="mapping_rml_full.ttl"):
     """
