@@ -16,10 +16,10 @@ from rdflib.util import from_n3
 from morph_kgc.mapping.mapping_parser import retrieve_mappings
 from morph_kgc.mapping.mapping_parser import MappingParser
 from morph_kgc.__init__ import materialize
-from .utils import verify_cottas_file
-from .types import Triple
-from .tp_translator import translate_triple_pattern_tuple
-from .rml_ttl import rml_df_to_ttl
+from pycottas.utils import verify_cottas_file
+from pycottas.types_2 import Triple
+from pycottas.tp_translator import translate_triple_pattern_tuple
+from pycottas.rml_ttl import rml_df_to_ttl
 import re
 
 
