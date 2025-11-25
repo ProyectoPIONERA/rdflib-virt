@@ -54,9 +54,6 @@ class COTTASStore(Store):
 
         Returns: An iterator that produces RDF triples matching the input triple pattern.
         """
-
-        parser = MappingParser(self.config_path)
-        self.config = parser.get_config()
         #1. Retrieve mappings to get rml_df filtered
         rml_df, _, _ = retrieve_mappings(self.config)
 
