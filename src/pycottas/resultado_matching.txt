@@ -1,0 +1,39 @@
+📌 AGRUPACIÓN POR TRIPLESMAP
+===========================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+
+    Predicates:
+       🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#AssistantProfessor  (type: http://w3id.org/rml/constant)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+
+    Predicates:
+       🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#AssociateProfessor  (type: http://w3id.org/rml/constant)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#CoAuthorOfPublication
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationAuthor
+          ↳ Object: http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu
+
+    Predicates:
+       🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#Department  (type: http://w3id.org/rml/constant)
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+          ↳ Object: name  (type: http://w3id.org/rml/reference)
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#subOrganizationOf
+          ↳ Object: http://www.university{universitynr}.edu  (type: http://w3id.org/rml/template)
+
