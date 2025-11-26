@@ -48,8 +48,9 @@ def rml_df_to_ttl(csv_path, ttl_path):
             f.write("    ] ;\n")
 
             # Subject Map
+            subj_type = str(row.get("subject_map_type", "")).split("/")[-1].lower()
             subj_val = row.get("subject_map_value")
-            f.write(f"    rml:subjectMap [ rml:template {subj_val} ] .\n\n")
+            f.write(f"    rml:subjectMap [ rml:{subj_type} {subj_val} ] .\n\n")
 
     print(f"✅ Mapping TTL limpio generado: {ttl_path}")
 
