@@ -16,6 +16,8 @@ def rml_df_to_ttl(csv_path, ttl_path):
     Convierte un CSV de rml_df a un mapping Turtle RML formal.
     Genera predicateObjectMap exactamente según object_map_value y predicate_map_value.
     """
+    
+
     df = pd.read_csv(csv_path)
 
     with open(ttl_path, "w", encoding="utf-8") as f:
@@ -29,9 +31,13 @@ def rml_df_to_ttl(csv_path, ttl_path):
             tm_id = row["triples_map_id"]
 
             # Logical source
-            f.write(f"<{tm_id}> rml:logicalSource [")
-            f.write(f' rml:query\n """{row["logical_source_value"].strip()}""" ;\n')
-            f.write(f"        rml:referenceFormulation rml:SQL2008 ] ;\n")
+            ls_type = str(row.get("logical_source_type", "")).split("/")[-1].lower()
+            ls_value = str(row.get("logical_source_value"))
+            f.write(f' <{tm_id}> rml:logicalSource [ rml:{ls_type} """{ls_value}""" ')
+            if ls_type == "query":
+                f.write(f"\n        rml:referenceFormulation rml:SQL2008 ] ;\n")
+            else : 
+                f.write(f"] ;\n")
 
             # Predicate Object Map
             f.write("    rml:predicateObjectMap [\n")
