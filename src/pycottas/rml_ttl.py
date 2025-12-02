@@ -39,7 +39,7 @@ def rml_df_to_ttl(csv_path, ttl_path):
             ls_value = str(row.get("logical_source_value"))
             f.write(f' <{tm_id}> rml:logicalSource [ rml:{ls_type} ')
             if ls_type == "query":
-                f.write(f' """{ls_value}"""  \n            rml:referenceFormulation rml:SQL2008 ] ;\n')
+                f.write(f' """{ls_value}""" ; \n            rml:referenceFormulation rml:SQL2008 ] ;\n')
             else : 
                 f.write(f' "{ls_value}" ] ;\n')
 
@@ -56,10 +56,10 @@ def rml_df_to_ttl(csv_path, ttl_path):
             # Object Map
             obj_type = str(row.get("object_map_type", "")).split("/")[-1].lower()
             obj_val = row.get("object_map_value")
-            if not "http" in obj_val:
-                f.write(f'        rml:objectMap [ rml:{obj_type} "{obj_val}";\n                rml:termType rml:IRI ] ;\n')
-            else:
+            if ub in obj_val:
                 f.write(f'        rml:objectMap [ rml:{obj_type} ub:{str(obj_val).split("#")[-1].lower()} ;\n                rml:termType rml:IRI ] ;\n')
+            else:
+                f.write(f'        rml:objectMap [ rml:{obj_type} "{obj_val}" ;\n                rml:termType rml:IRI ] ;\n')
 
             # Predicate Map
             pred_type = str(row.get("predicate_map_type", "")).split("/")[-1].lower()
@@ -75,7 +75,7 @@ def rml_df_to_ttl(csv_path, ttl_path):
             # Subject Map
             subj_type = str(row.get("subject_map_type", "")).split("/")[-1].lower()
             subj_val = row.get("subject_map_value")
-            f.write(f"    rml:subjectMap [ rml:{subj_type} {subj_val} ] .\n\n")
+            f.write(f'    rml:subjectMap [ rml:{subj_type} "{subj_val}" ] .\n\n')
 
     print(f"✅ Mapping TTL limpio generado: {ttl_path}")
 

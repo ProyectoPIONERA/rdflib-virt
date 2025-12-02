@@ -2,38 +2,394 @@
 ===========================================
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🔹 TriplesMap: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssistantProfessor
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM17
     • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
 
     Predicates:
        🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#AssistantProfessor  (type: http://w3id.org/rml/constant)
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#assistantprofessor  (type: http://w3id.org/rml/constant)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🔹 TriplesMap: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#AssociateProfessor
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM25
     • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
 
     Predicates:
-       🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#AssociateProfessor  (type: http://w3id.org/rml/constant)
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#worksfor
+          ↳ Object: http://www.department{departmentnr}.university{universitynr}.edu  (type: http://w3id.org/rml/template)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🔹 TriplesMap: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#CoAuthorOfPublication
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM26
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#doctoraldegreefrom
+          ↳ Object: http://www.university{doctoraldegreefrom}.edu  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM27
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#masterdegreefrom
+          ↳ Object: http://www.university{masterdegreefrom}.edu  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM3
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#suborganizationof
+          ↳ Object: http://www.university{universitynr}.edu  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM41
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduatedegreefrom
+          ↳ Object: http://www.university{undergraduatedegreefrom}.edu  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM28
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduatedegreefrom
+          ↳ Object: http://www.university{undergraduatedegreefrom}.edu  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM7
     • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
 
     Predicates:
-       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationAuthor
-          ↳ Object: http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}  (type: http://w3id.org/rml/template)
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#abstract
+          ↳ Object: publicationabstract  (type: http://w3id.org/rml/reference)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🔹 TriplesMap: file:///home/jorge/proyectos/git/lubm4obda/mappings/rml/lubm4obda.rml.ttl#Department
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM32
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailaddress
+          ↳ Object: emailaddress  (type: http://w3id.org/rml/reference)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM23
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailaddress
+          ↳ Object: emailaddress  (type: http://w3id.org/rml/reference)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM38
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailaddress
+          ↳ Object: emailaddress  (type: http://w3id.org/rml/reference)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM5
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+          ↳ Object: publicationname  (type: http://w3id.org/rml/reference)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM0
+    • SubjectMap → http://www.university{nr}.edu
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+          ↳ Object: name  (type: http://w3id.org/rml/reference)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM2
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+          ↳ Object: name  (type: http://w3id.org/rml/reference)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM14
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+          ↳ Object: graduatecoursename  (type: http://w3id.org/rml/reference)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM31
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+          ↳ Object: undergraduatestudentname  (type: http://w3id.org/rml/reference)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM12
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+          ↳ Object: undergraduatecoursename  (type: http://w3id.org/rml/reference)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM37
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+          ↳ Object: graduatestudentname  (type: http://w3id.org/rml/reference)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM22
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+          ↳ Object: facultyname  (type: http://w3id.org/rml/reference)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM19
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#researchinterest
+          ↳ Object: researchinterest  (type: http://w3id.org/rml/reference)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM33
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone
+          ↳ Object: telephone  (type: http://w3id.org/rml/reference)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM39
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone
+          ↳ Object: telephone  (type: http://w3id.org/rml/reference)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM44
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#teachingassistantof
+          ↳ Object: http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM24
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone
+          ↳ Object: telephone  (type: http://w3id.org/rml/reference)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM30
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#teacherof
+          ↳ Object: http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM47
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#takescourse
+          ↳ Object: http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM18
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+
+    Predicates:
+       🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#associateprofessor  (type: http://w3id.org/rml/constant)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM4
     • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu
 
     Predicates:
        🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#Department  (type: http://w3id.org/rml/constant)
-       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
-          ↳ Object: name  (type: http://w3id.org/rml/reference)
-       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#subOrganizationOf
-          ↳ Object: http://www.university{universitynr}.edu  (type: http://w3id.org/rml/template)
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#department  (type: http://w3id.org/rml/constant)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM16
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+
+    Predicates:
+       🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#fullprofessor  (type: http://w3id.org/rml/constant)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM15
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}
+
+    Predicates:
+       🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#graduatecourse  (type: http://w3id.org/rml/constant)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM42
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+
+    Predicates:
+       🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#graduatestudent  (type: http://w3id.org/rml/constant)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM21
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+
+    Predicates:
+       🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#lecturer  (type: http://w3id.org/rml/constant)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM9
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+
+    Predicates:
+       🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#publication  (type: http://w3id.org/rml/constant)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM11
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/researchGroup{researchgroupnr}.edu
+
+    Predicates:
+       🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#researchgroup  (type: http://w3id.org/rml/constant)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM45
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+
+    Predicates:
+       🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#teachingassistant  (type: http://w3id.org/rml/constant)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM13
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
+
+    Predicates:
+       🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduatecourse  (type: http://w3id.org/rml/constant)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM35
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+
+    Predicates:
+       🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduatestudent  (type: http://w3id.org/rml/constant)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM1
+    • SubjectMap → http://www.university{nr}.edu
+
+    Predicates:
+       🔸 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+          ↳ Object: http://swat.cse.lehigh.edu/onto/univ-bench.owl#university  (type: http://w3id.org/rml/constant)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM36
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor
+          ↳ Object: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM43
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor
+          ↳ Object: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM20
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#headof
+          ↳ Object: http://www.department{headof}.university{universitynr}.edu  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM40
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#memberof
+          ↳ Object: http://www.department{departmentnr}.university{universitynr}.edu  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM34
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#memberof
+          ↳ Object: http://www.department{departmentnr}.university{universitynr}.edu  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM8
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationauthor
+          ↳ Object: http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM46
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationauthor
+          ↳ Object: http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM10
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/researchGroup{researchgroupnr}.edu
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#suborganizationof
+          ↳ Object: http://www.department{departmentnr}.university{universitynr}.edu  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM48
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#takescourse
+          ↳ Object: http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM29
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#teacherof
+          ↳ Object: http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}  (type: http://w3id.org/rml/template)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹 TriplesMap: file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM6
+    • SubjectMap → http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+
+    Predicates:
+       🔸 http://swat.cse.lehigh.edu/onto/univ-bench.owl#title
+          ↳ Object: publicationtitle  (type: http://w3id.org/rml/reference)
 

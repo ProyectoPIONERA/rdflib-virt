@@ -5,6 +5,7 @@ import re
 RML = Namespace("http://w3id.org/rml/")
 RR  = Namespace("http://www.w3.org/ns/r2rml#")
 RDF = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+UB = Namespace ("http://swat.cse.lehigh.edu/onto/univ-bench.owl#")
 
 OUTPUT_FILE = "resultado_matching.txt"
 
@@ -41,7 +42,7 @@ def normalize_type(value):
 if __name__ == "__main__":
 
     graph = Graph()
-    graph.parse("prueba.ttl", format="turtle")
+    graph.parse("mapping_generated.ttl", format="turtle")
 
     rows = list(graph.query(QUERY, initNs={"rml": RML, "rr": RR}))
 
