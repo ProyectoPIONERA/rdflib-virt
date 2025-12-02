@@ -1,6 +1,9 @@
 import pandas as pd
 from morph_kgc.config import Config
 from morph_kgc.mapping.mapping_parser import retrieve_mappings
+from matcher_rf import extract_bound_pattern
+from rdflib import Graph
+import re
 
 config = Config()
 config.read("config.ini")
@@ -79,5 +82,76 @@ def rml_df_to_ttl(csv_path, ttl_path):
 
     print(f"✅ Mapping TTL limpio generado: {ttl_path}")
 
-
 rml_df_to_ttl("output_rml.csv", "mapping_generated.ttl")
+
+# Ruta del archivo TTL existente
+input_file = "mapping_generated.ttl"   
+output_file = "output.ttl"  
+
+# 1. Crear un grafo
+graph = Graph()
+
+# 2. Cargar el archivo TTL
+print(f"📥 Cargando archivo RDF desde: {input_file}")
+graph.parse(input_file, format="turtle")
+
+print(f"✔ Archivo cargado. Número de triples: {len(graph)}")
+
+# 3. Serializarlo (guardar)
+graph.serialize(output_file, format="turtle")
+
+print(f"📤 Archivo exportado como Turtle en: {output_file}")
+
+# Convertir el grafo en una lista de triples
+triples_data = [(str(s), str(p), str(o)) for s, p, o in graph]
+
+# Crear el DataFrame
+df_triples = pd.DataFrame(triples_data, columns=["S", "P", "O"])
+
+# Guardar opcionalmente como CSV
+df_triples.to_csv("triples_output.csv", index=False)
+print("✔ Archivo guardado: triples_output.csv")
+
+
+"""
+
+#Opcion 1: filtrar usando una función, sacar del matcher los s,p,o y ponerlos en la llamada a la función
+def filter_by_pattern(df_triples, s=None, p=None, o=None):
+    filtered = df_triples.copy()
+
+    if s and not re.search(r'[\?\$]', s):
+        filtered = filtered[filtered["S"].str.contains(re.escape(s))]
+
+    if p and not re.search(r'[\?\$]', p):
+        filtered = filtered[filtered["P"].str.contains(re.escape(p))]
+
+    if o and not re.search(r'[\?\$]', o):
+        filtered = filtered[filtered["O"].str.contains(re.escape(o))]
+
+    return filtered.reset_index(drop=True)
+
+pattern = extract_bound_pattern("mapping_generated.ttl")
+
+print("\n🔍 DEBUG — Patrón extraído:")
+print("Subjects:", pattern["subjects"])
+print("Predicates:", pattern["predicates"])
+print("Objects:", pattern["objects"])
+
+print("\n📌 DEBUG — Ejemplo de tripletas reales:")
+print(df_triples.head(10))
+
+print("\n🎯 Valores bounded detectados:")
+print(pattern)
+
+# Por ahora filtramos por el PRIMER bounded encontrado (esto luego se puede mejorar)
+s = pattern["subjects"][0] if pattern["subjects"] else None
+p = pattern["predicates"][0] if pattern["predicates"] else None
+o = pattern["objects"][0] if pattern["objects"] else None
+
+filtered_df = filter_by_pattern(df_triples, s=s, p=p, o=o)
+
+filtered_df.to_csv("filtered_triples.csv", index=False)
+print("\n✔ Tripletas filtradas guardadas en: filtered_triples.csv\n")
+print(filtered_df)
+
+"""

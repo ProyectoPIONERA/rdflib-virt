@@ -1,0 +1,586 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix ub: <http://swat.cse.lehigh.edu/onto/univ-bench.owl#> .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM0> rml:logicalSource [ rml:tablename "university" ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "name" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:name ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.university{nr}.edu" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM1> rml:logicalSource [ rml:tablename "university" ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:constant ub:university ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant rdf:type ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.university{nr}.edu" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM10> rml:logicalSource [ rml:query """
+        SELECT researchGroup.nr AS researchgroupnr, researchGroup.subOrganizationOf AS departmentnr, department.subOrganizationOf AS universitynr
+        FROM researchGroup INNER JOIN department ON researchGroup.subOrganizationOf=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:suborganizationof ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/researchGroup{researchgroupnr}.edu" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM11> rml:logicalSource [ rml:query """
+        SELECT researchGroup.nr AS researchgroupnr, researchGroup.subOrganizationOf AS departmentnr, department.subOrganizationOf AS universitynr
+        FROM researchGroup INNER JOIN department ON researchGroup.subOrganizationOf=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:constant ub:researchgroup ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant rdf:type ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/researchGroup{researchgroupnr}.edu" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM12> rml:logicalSource [ rml:query """
+        SELECT subOrganizationOf AS universitynr, undergraduateCourse.name AS undergraduatecoursename, department.nr AS departmentnr
+        FROM undergraduateCourse INNER JOIN faculty ON undergraduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "undergraduatecoursename" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:name ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM13> rml:logicalSource [ rml:query """
+        SELECT subOrganizationOf AS universitynr, undergraduateCourse.name AS undergraduatecoursename, department.nr AS departmentnr
+        FROM undergraduateCourse INNER JOIN faculty ON undergraduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:constant ub:undergraduatecourse ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant rdf:type ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM14> rml:logicalSource [ rml:query """
+        SELECT subOrganizationOf AS universitynr, graduateCourse.name AS graduatecoursename, department.nr AS departmentnr
+        FROM graduateCourse INNER JOIN faculty ON graduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "graduatecoursename" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:name ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM15> rml:logicalSource [ rml:query """
+        SELECT subOrganizationOf AS universitynr, graduateCourse.name AS graduatecoursename, department.nr AS departmentnr
+        FROM graduateCourse INNER JOIN faculty ON graduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:constant ub:graduatecourse ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant rdf:type ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM16> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
+        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr WHERE professor.professorType='fullProfessor' """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:constant ub:fullprofessor ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant rdf:type ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM17> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
+        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr WHERE professor.professorType='assistantProfessor' """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:constant ub:assistantprofessor ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant rdf:type ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM18> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
+        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr WHERE professor.professorType='associateProfessor' """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:constant ub:associateprofessor ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant rdf:type ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM19> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, researchInterest AS researchinterest, headOf AS headof
+        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "researchinterest" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:researchinterest ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM2> rml:logicalSource [ rml:query """
+        SELECT nr AS departmentnr, subOrganizationOf AS universitynr, name
+        FROM department """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "name" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:name ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM20> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, researchInterest AS researchinterest, headOf AS headof
+        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.department{headof}.university{universitynr}.edu" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:headof ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM21> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
+        FROM lecturer INNER JOIN faculty ON lecturer.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:constant ub:lecturer ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant rdf:type ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM22> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "facultyname" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:name ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM23> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "emailaddress" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:emailaddress ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM24> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "telephone" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:telephone ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM25> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:worksfor ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM26> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.university{doctoraldegreefrom}.edu" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:doctoraldegreefrom ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM27> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.university{masterdegreefrom}.edu" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:masterdegreefrom ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM28> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.university{undergraduatedegreefrom}.edu" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:undergraduatedegreefrom ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM29> rml:logicalSource [ rml:query """
+        SELECT faculty.name AS facultyname, department.nr AS departmentnr, department.subOrganizationOf AS universitynr, graduateCourse.name AS graduatecoursename
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr INNER JOIN graduateCourse ON graduateCourse.teacher=faculty.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:teacherof ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM3> rml:logicalSource [ rml:query """
+        SELECT nr AS departmentnr, subOrganizationOf AS universitynr, name
+        FROM department """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.university{universitynr}.edu" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:suborganizationof ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM30> rml:logicalSource [ rml:query """
+        SELECT faculty.name AS facultyname, department.nr AS departmentnr, department.subOrganizationOf AS universitynr, undergraduateCourse.name AS undergraduatecoursename
+        FROM faculty INNER JOIN department ON worksFor=department.nr INNER JOIN undergraduateCourse ON undergraduateCourse.teacher=faculty.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:teacherof ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM31> rml:logicalSource [ rml:query """
+        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
+        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "undergraduatestudentname" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:name ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM32> rml:logicalSource [ rml:query """
+        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
+        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "emailaddress" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:emailaddress ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM33> rml:logicalSource [ rml:query """
+        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
+        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "telephone" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:telephone ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM34> rml:logicalSource [ rml:query """
+        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
+        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:memberof ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM35> rml:logicalSource [ rml:query """
+        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
+        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:constant ub:undergraduatestudent ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant rdf:type ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM36> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, faculty.name AS facultyname
+        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr INNER JOIN faculty ON undergraduateStudent.advisor=faculty.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:advisor ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM37> rml:logicalSource [ rml:query """
+        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "graduatestudentname" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:name ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM38> rml:logicalSource [ rml:query """
+        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "emailaddress" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:emailaddress ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM39> rml:logicalSource [ rml:query """
+        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "telephone" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:telephone ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM4> rml:logicalSource [ rml:query """
+        SELECT nr AS departmentnr, subOrganizationOf AS universitynr, name
+        FROM department """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:constant ub:department ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant rdf:type ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM40> rml:logicalSource [ rml:query """
+        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:memberof ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM41> rml:logicalSource [ rml:query """
+        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.university{undergraduatedegreefrom}.edu" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:undergraduatedegreefrom ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM42> rml:logicalSource [ rml:query """
+        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:constant ub:graduatestudent ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant rdf:type ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM43> rml:logicalSource [ rml:query """
+        SELECT department.nr AS departmentnr, department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, faculty.name AS facultyname
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr INNER JOIN faculty ON graduateStudent.advisor=faculty.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:advisor ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM44> rml:logicalSource [ rml:query """
+        SELECT undergraduateCourse.name AS undergraduatecoursename, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, department.subOrganizationOf as universitynr
+        FROM undergraduateCourse INNER JOIN graduateStudent ON undergraduateCourse.teachingAssistant=graduateStudent.nr INNER JOIN department ON graduateStudent.memberOf=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:teachingassistantof ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM45> rml:logicalSource [ rml:query """
+        SELECT undergraduateCourse.name AS undergraduatecoursename, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, department.subOrganizationOf as universitynr
+        FROM undergraduateCourse INNER JOIN graduateStudent ON undergraduateCourse.teachingAssistant=graduateStudent.nr INNER JOIN department ON graduateStudent.memberOf=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:constant ub:teachingassistant ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant rdf:type ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM46> rml:logicalSource [ rml:query """
+        SELECT publication.name AS publicationname, graduateStudent.name AS graduatestudentname, faculty.name AS facultyname, department.nr AS departmentnr, department.subOrganizationOf AS universitynr
+        FROM coAuthorOfPublication INNER JOIN publication ON coAuthorOfPublication.publicationID=publication.nr INNER JOIN faculty ON publication.mainAuthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr INNER JOIN graduateStudent ON coAuthorOfPublication.graduateStudentID=graduateStudent.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:publicationauthor ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM47> rml:logicalSource [ rml:query """
+        SELECT undergraduateStudent.name AS undergraduatestudentname, undergraduateCourse.name AS undergraduatecoursename, department.nr AS departmentnr, department.subOrganizationOf AS universitynr
+        FROM undergraduateStudentTakeCourse INNER JOIN undergraduateStudent ON undergraduateStudentTakeCourse.undergraduateStudentID=undergraduateStudent.nr INNER JOIN department ON undergraduateStudent.memberOf=department.nr INNER JOIN undergraduateCourse ON undergraduateStudentTakeCourse.undergraduateCourseID=undergraduateCourse.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:takescourse ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM48> rml:logicalSource [ rml:query """
+        SELECT graduateStudent.name AS graduatestudentname, graduateCourse.name AS graduatecoursename, department.nr AS departmentnr, department.subOrganizationOf AS universitynr
+        FROM graduateStudentTakeCourse INNER JOIN graduateStudent ON graduateStudentTakeCourse.graduateStudentID=graduateStudent.nr INNER JOIN department ON graduateStudent.memberOf=department.nr INNER JOIN graduateCourse ON graduateStudentTakeCourse.graduateCourseID=graduateCourse.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:takescourse ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM5> rml:logicalSource [ rml:query """
+        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
+        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "publicationname" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:name ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM6> rml:logicalSource [ rml:query """
+        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
+        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "publicationtitle" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:title ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM7> rml:logicalSource [ rml:query """
+        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
+        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:reference "publicationabstract" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:abstract ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM8> rml:logicalSource [ rml:query """
+        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
+        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant ub:publicationauthor ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}" ] .
+
+<file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM9> rml:logicalSource [ rml:query """
+        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
+        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
+            rml:referenceFormulation rml:SQL2008 ] ;
+    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultgraph ;
+                    rml:termType rml:IRI ] ;
+            rml:objectMap [ rml:constant ub:publication ;
+                    rml:termType rml:IRI ] ;
+            rml:predicateMap [ rml:constant rdf:type ;
+                    rml:termType rml:IRI ] ] ;
+    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}" ] .
+

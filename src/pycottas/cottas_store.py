@@ -62,12 +62,8 @@ class COTTASStore(Store):
         rdf_graph = materialize(rml_df_ttl, config=self.config)
 
         #3. convert graph into dataframe
-        triples = [
-            {"S": str(s), "P": str(p), "O": str(o)}
-            for s, p, o in rdf_graph.triples((None, None, None))
-        ]       
-
-        df = pd.DataFrame(triples)
+        triples_df = [(str(s), str(p), str(o)) for s, p, o in rdf_graph]
+        df = pd.DataFrame(triples_df, columns=["S", "P", "O"])
 
         #4. Filter dataframe with pattern (bounded terms)
         def filtered_triples(df: pd.DataFrame, pattern: str) -> pd.DataFrame:
