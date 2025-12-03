@@ -1,828 +1,828 @@
 S,P,O
-n95d286e0f9094126bce11866afcb8e42b207,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b275,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#suborganizationof
-n95d286e0f9094126bce11866afcb8e42b143,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b223,http://w3id.org/rml/tablename,university
-n95d286e0f9094126bce11866afcb8e42b130,http://w3id.org/rml/reference,telephone
-n95d286e0f9094126bce11866afcb8e42b141,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b247,http://w3id.org/rml/query,"
-        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
-        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr "
-n95d286e0f9094126bce11866afcb8e42b109,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b169,http://w3id.org/rml/query,"
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
-        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr WHERE professor.professorType='fullProfessor' "
-n95d286e0f9094126bce11866afcb8e42b73,http://w3id.org/rml/tablename,university
-n95d286e0f9094126bce11866afcb8e42b161,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-n95d286e0f9094126bce11866afcb8e42b191,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM41,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b36
-n95d286e0f9094126bce11866afcb8e42b219,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b106,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b152,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b154
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM26,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b14
-n95d286e0f9094126bce11866afcb8e42b62,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b63
-n95d286e0f9094126bce11866afcb8e42b39,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b249,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b270,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
-n95d286e0f9094126bce11866afcb8e42b290,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b291
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM16,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b169
-n95d286e0f9094126bce11866afcb8e42b208,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b278,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b281
-n95d286e0f9094126bce11866afcb8e42b124,http://w3id.org/rml/reference,telephone
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM41,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b31
-n95d286e0f9094126bce11866afcb8e42b271,http://w3id.org/rml/query,"
-        SELECT researchGroup.nr AS researchgroupnr, researchGroup.subOrganizationOf AS departmentnr, department.subOrganizationOf AS universitynr
-        FROM researchGroup INNER JOIN department ON researchGroup.subOrganizationOf=department.nr "
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM34,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b258
-n95d286e0f9094126bce11866afcb8e42b286,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}
-n95d286e0f9094126bce11866afcb8e42b55,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b40,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b289,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b63,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM22,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b109
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM19,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b120
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM33,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b122
-n95d286e0f9094126bce11866afcb8e42b148,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM22,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b110
-n95d286e0f9094126bce11866afcb8e42b157,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b186,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b211,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b156,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b15,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b274,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b293,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#title
-n95d286e0f9094126bce11866afcb8e42b178,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#graduatecourse
-n95d286e0f9094126bce11866afcb8e42b87,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b181,http://w3id.org/rml/query,"
-        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
-        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr "
-n95d286e0f9094126bce11866afcb8e42b23,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#masterdegreefrom
-n95d286e0f9094126bce11866afcb8e42b3,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM18,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b157
-n95d286e0f9094126bce11866afcb8e42b191,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM7,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b43
-n95d286e0f9094126bce11866afcb8e42b121,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b282,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b82,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b13,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM16,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b174
-n95d286e0f9094126bce11866afcb8e42b225,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b101,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
-n95d286e0f9094126bce11866afcb8e42b70,http://w3id.org/rml/reference,publicationname
-n95d286e0f9094126bce11866afcb8e42b29,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b108,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b127,http://w3id.org/rml/query,"
-        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
-        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr "
-n95d286e0f9094126bce11866afcb8e42b216,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
-n95d286e0f9094126bce11866afcb8e42b28,http://w3id.org/rml/template,http://www.university{universitynr}.edu
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM3,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b30
-n95d286e0f9094126bce11866afcb8e42b158,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b160
-n95d286e0f9094126bce11866afcb8e42b170,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b172
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM26,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b18
-n95d286e0f9094126bce11866afcb8e42b109,http://w3id.org/rml/query,"
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b35,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b14,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b16
-n95d286e0f9094126bce11866afcb8e42b76,http://w3id.org/rml/reference,name
-n95d286e0f9094126bce11866afcb8e42b128,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b129
-n95d286e0f9094126bce11866afcb8e42b182,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b185
-n95d286e0f9094126bce11866afcb8e42b257,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#memberof
-n95d286e0f9094126bce11866afcb8e42b129,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b241,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b20,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b23
-n95d286e0f9094126bce11866afcb8e42b275,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM6,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b290
-n95d286e0f9094126bce11866afcb8e42b92,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b95
-n95d286e0f9094126bce11866afcb8e42b134,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b136
-n95d286e0f9094126bce11866afcb8e42b125,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone
-n95d286e0f9094126bce11866afcb8e42b200,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b203
-n95d286e0f9094126bce11866afcb8e42b198,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM44,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b133
-n95d286e0f9094126bce11866afcb8e42b58,http://w3id.org/rml/reference,emailaddress
-n95d286e0f9094126bce11866afcb8e42b98,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b99
-n95d286e0f9094126bce11866afcb8e42b76,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b12,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-n95d286e0f9094126bce11866afcb8e42b224,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b226
-n95d286e0f9094126bce11866afcb8e42b149,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#teacherof
-n95d286e0f9094126bce11866afcb8e42b113,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b166,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b189,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b132,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b88,http://w3id.org/rml/reference,graduatecoursename
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM35,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b218
-n95d286e0f9094126bce11866afcb8e42b134,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b137
-n95d286e0f9094126bce11866afcb8e42b208,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#teachingassistant
-n95d286e0f9094126bce11866afcb8e42b6,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM38,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b61
-n95d286e0f9094126bce11866afcb8e42b174,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-n95d286e0f9094126bce11866afcb8e42b89,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
-n95d286e0f9094126bce11866afcb8e42b32,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b35
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM16,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b170
-n95d286e0f9094126bce11866afcb8e42b157,http://w3id.org/rml/query,"
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
-        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr WHERE professor.professorType='associateProfessor' "
-n95d286e0f9094126bce11866afcb8e42b62,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b65
-n95d286e0f9094126bce11866afcb8e42b215,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-n95d286e0f9094126bce11866afcb8e42b147,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b40,http://w3id.org/rml/template,http://www.university{undergraduatedegreefrom}.edu
-n95d286e0f9094126bce11866afcb8e42b135,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b104,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b106
-n95d286e0f9094126bce11866afcb8e42b253,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b44,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b45
-n95d286e0f9094126bce11866afcb8e42b155,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#takescourse
-n95d286e0f9094126bce11866afcb8e42b212,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b214
-n95d286e0f9094126bce11866afcb8e42b218,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b221
-n95d286e0f9094126bce11866afcb8e42b56,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b58
-n95d286e0f9094126bce11866afcb8e42b287,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b221,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b262,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b212,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b215
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM3,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b25
-n95d286e0f9094126bce11866afcb8e42b30,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu
-n95d286e0f9094126bce11866afcb8e42b81,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b211,http://w3id.org/rml/query,"
-        SELECT subOrganizationOf AS universitynr, undergraduateCourse.name AS undergraduatecoursename, department.nr AS departmentnr
-        FROM undergraduateCourse INNER JOIN faculty ON undergraduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM6,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b294
-n95d286e0f9094126bce11866afcb8e42b79,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b25,http://w3id.org/rml/query,"
-        SELECT nr AS departmentnr, subOrganizationOf AS universitynr, name
-        FROM department "
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM38,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b62
-n95d286e0f9094126bce11866afcb8e42b215,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b16,http://w3id.org/rml/template,http://www.university{doctoraldegreefrom}.edu
-n95d286e0f9094126bce11866afcb8e42b170,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b173
-n95d286e0f9094126bce11866afcb8e42b184,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#graduatestudent
-n95d286e0f9094126bce11866afcb8e42b170,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b171
-n95d286e0f9094126bce11866afcb8e42b273,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b49,http://w3id.org/rml/query,"
-        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
-        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr "
-n95d286e0f9094126bce11866afcb8e42b137,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b14,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b15
-n95d286e0f9094126bce11866afcb8e42b52,http://w3id.org/rml/reference,emailaddress
-n95d286e0f9094126bce11866afcb8e42b66,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b260,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b263
-n95d286e0f9094126bce11866afcb8e42b260,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b261
-n95d286e0f9094126bce11866afcb8e42b32,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b33
-n95d286e0f9094126bce11866afcb8e42b67,http://w3id.org/rml/query,"
-        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
-        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b117,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b221,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-n95d286e0f9094126bce11866afcb8e42b31,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b256,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b267,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b94,http://w3id.org/rml/reference,undergraduatestudentname
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM33,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b126
-n95d286e0f9094126bce11866afcb8e42b145,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b167,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-n95d286e0f9094126bce11866afcb8e42b150,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-n95d286e0f9094126bce11866afcb8e42b45,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b47,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b41,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b92,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b94
-n95d286e0f9094126bce11866afcb8e42b292,http://w3id.org/rml/reference,publicationtitle
-n95d286e0f9094126bce11866afcb8e42b116,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b117
-n95d286e0f9094126bce11866afcb8e42b65,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailaddress
-n95d286e0f9094126bce11866afcb8e42b159,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b68,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b70
-n95d286e0f9094126bce11866afcb8e42b278,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b279
-n95d286e0f9094126bce11866afcb8e42b290,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b292
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM42,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b186
-n95d286e0f9094126bce11866afcb8e42b207,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b251,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM12,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b97
-n95d286e0f9094126bce11866afcb8e42b153,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b146,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b148
-n95d286e0f9094126bce11866afcb8e42b57,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b27,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b35,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduatedegreefrom
-n95d286e0f9094126bce11866afcb8e42b91,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b164,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b166
-n95d286e0f9094126bce11866afcb8e42b185,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM35,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b217
-n95d286e0f9094126bce11866afcb8e42b242,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b245
-n95d286e0f9094126bce11866afcb8e42b274,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu
-n95d286e0f9094126bce11866afcb8e42b193,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b24,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-n95d286e0f9094126bce11866afcb8e42b139,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM9,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b198
-n95d286e0f9094126bce11866afcb8e42b160,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM10,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b271
-n95d286e0f9094126bce11866afcb8e42b2,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b4
-n95d286e0f9094126bce11866afcb8e42b230,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b232
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM12,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b98
-n95d286e0f9094126bce11866afcb8e42b171,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b279,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b169,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b266,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b269
-n95d286e0f9094126bce11866afcb8e42b110,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b111
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM3,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b26
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM48,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b277
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM45,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b206
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM27,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b20
-n95d286e0f9094126bce11866afcb8e42b2,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b3
-n95d286e0f9094126bce11866afcb8e42b285,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b33,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b138,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM11,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b204
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM20,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b241
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM2,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b80
-n95d286e0f9094126bce11866afcb8e42b9,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b195,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM23,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b60
-n95d286e0f9094126bce11866afcb8e42b200,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b202
-n95d286e0f9094126bce11866afcb8e42b210,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b59,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b64,http://w3id.org/rml/reference,emailaddress
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM29,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b288
-n95d286e0f9094126bce11866afcb8e42b182,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b183
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM28,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b42
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM27,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b24
-n95d286e0f9094126bce11866afcb8e42b107,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
-n95d286e0f9094126bce11866afcb8e42b236,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b239
-n95d286e0f9094126bce11866afcb8e42b22,http://w3id.org/rml/template,http://www.university{masterdegreefrom}.edu
-n95d286e0f9094126bce11866afcb8e42b56,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b59
-n95d286e0f9094126bce11866afcb8e42b245,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b268,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM47,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b151
-n95d286e0f9094126bce11866afcb8e42b137,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#teachingassistantof
-n95d286e0f9094126bce11866afcb8e42b17,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#doctoraldegreefrom
-n95d286e0f9094126bce11866afcb8e42b103,http://w3id.org/rml/query,"
-        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
-        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr "
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM5,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b68
-n95d286e0f9094126bce11866afcb8e42b118,http://w3id.org/rml/reference,researchinterest
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM14,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b90
-n95d286e0f9094126bce11866afcb8e42b119,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b254,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b257
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM44,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b134
-n95d286e0f9094126bce11866afcb8e42b90,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM4,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b164
-n95d286e0f9094126bce11866afcb8e42b291,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b167,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b97,http://w3id.org/rml/query,"
-        SELECT subOrganizationOf AS universitynr, undergraduateCourse.name AS undergraduatecoursename, department.nr AS departmentnr
-        FROM undergraduateCourse INNER JOIN faculty ON undergraduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b259,http://w3id.org/rml/query,"
-        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
-        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b232,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b164,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b165
-n95d286e0f9094126bce11866afcb8e42b179,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM25,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b12
-n95d286e0f9094126bce11866afcb8e42b17,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b131,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b187,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b250,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu
-n95d286e0f9094126bce11866afcb8e42b164,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b167
-n95d286e0f9094126bce11866afcb8e42b220,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b20,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b21
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM17,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b1
-n95d286e0f9094126bce11866afcb8e42b202,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b37,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM30,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b150
-n95d286e0f9094126bce11866afcb8e42b268,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b178,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM4,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b168
-n95d286e0f9094126bce11866afcb8e42b14,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b17
-n95d286e0f9094126bce11866afcb8e42b196,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b46,http://w3id.org/rml/reference,publicationabstract
-n95d286e0f9094126bce11866afcb8e42b261,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b105,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b163,http://w3id.org/rml/query,"
-        SELECT nr AS departmentnr, subOrganizationOf AS universitynr, name
-        FROM department "
-n95d286e0f9094126bce11866afcb8e42b264,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
-n95d286e0f9094126bce11866afcb8e42b93,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b283,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b94,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM10,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b276
-n95d286e0f9094126bce11866afcb8e42b72,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
-n95d286e0f9094126bce11866afcb8e42b217,http://w3id.org/rml/query,"
-        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
-        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr "
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM17,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b2
-n95d286e0f9094126bce11866afcb8e42b252,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b172,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#fullprofessor
-n95d286e0f9094126bce11866afcb8e42b55,http://w3id.org/rml/query,"
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b8,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b9
-n95d286e0f9094126bce11866afcb8e42b102,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
-n95d286e0f9094126bce11866afcb8e42b248,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b249
-n95d286e0f9094126bce11866afcb8e42b262,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-n95d286e0f9094126bce11866afcb8e42b249,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b242,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b244
-n95d286e0f9094126bce11866afcb8e42b227,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-n95d286e0f9094126bce11866afcb8e42b89,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b69,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b22,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b65,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b123,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM21,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b188
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM40,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b252
-n95d286e0f9094126bce11866afcb8e42b183,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM22,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b114
-n95d286e0f9094126bce11866afcb8e42b290,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b293
-n95d286e0f9094126bce11866afcb8e42b177,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b19,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b68,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b69
-n95d286e0f9094126bce11866afcb8e42b201,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b165,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b61,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM18,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b158
-n95d286e0f9094126bce11866afcb8e42b187,http://w3id.org/rml/query,"
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
-        FROM lecturer INNER JOIN faculty ON lecturer.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b43,http://w3id.org/rml/query,"
-        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
-        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b277,http://w3id.org/rml/query,"
-        SELECT graduateStudent.name AS graduatestudentname, graduateCourse.name AS graduatecoursename, department.nr AS departmentnr, department.subOrganizationOf AS universitynr
-        FROM graduateStudentTakeCourse INNER JOIN graduateStudent ON graduateStudentTakeCourse.graduateStudentID=graduateStudent.nr INNER JOIN department ON graduateStudent.memberOf=department.nr INNER JOIN graduateCourse ON graduateStudentTakeCourse.graduateCourseID=graduateCourse.nr "
-n95d286e0f9094126bce11866afcb8e42b155,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b60,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-n95d286e0f9094126bce11866afcb8e42b141,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b267,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b192,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-n95d286e0f9094126bce11866afcb8e42b83,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
-n95d286e0f9094126bce11866afcb8e42b206,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b209
-n95d286e0f9094126bce11866afcb8e42b214,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b50,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b52
-n95d286e0f9094126bce11866afcb8e42b227,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b16,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b41,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduatedegreefrom
-n95d286e0f9094126bce11866afcb8e42b125,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM18,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b162
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM45,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b210
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM1,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b228
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM28,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b37
-n95d286e0f9094126bce11866afcb8e42b143,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone
-n95d286e0f9094126bce11866afcb8e42b248,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b251
-n95d286e0f9094126bce11866afcb8e42b78,http://w3id.org/rml/template,http://www.university{nr}.edu
-n95d286e0f9094126bce11866afcb8e42b59,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailaddress
-n95d286e0f9094126bce11866afcb8e42b111,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b160,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#associateprofessor
-n95d286e0f9094126bce11866afcb8e42b115,http://w3id.org/rml/query,"
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, researchInterest AS researchinterest, headOf AS headof
-        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b63,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b151,http://w3id.org/rml/query,"
+n03e41f9f651e4af5825ed26bc9304c2eb107,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+n03e41f9f651e4af5825ed26bc9304c2eb15,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb236,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb239
+n03e41f9f651e4af5825ed26bc9304c2eb128,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb129
+n03e41f9f651e4af5825ed26bc9304c2eb175,http://w3id.org/rml/query,"
+        SELECT subOrganizationOf AS universitynr, graduateCourse.name AS graduatecoursename, department.nr AS departmentnr
+        FROM graduateCourse INNER JOIN faculty ON graduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb72,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM40,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb247
+n03e41f9f651e4af5825ed26bc9304c2eb54,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+n03e41f9f651e4af5825ed26bc9304c2eb93,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb74,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb76
+n03e41f9f651e4af5825ed26bc9304c2eb268,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM23,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb56
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM6,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb289
+n03e41f9f651e4af5825ed26bc9304c2eb151,http://w3id.org/rml/query,"
         SELECT undergraduateStudent.name AS undergraduatestudentname, undergraduateCourse.name AS undergraduatecoursename, department.nr AS departmentnr, department.subOrganizationOf AS universitynr
         FROM undergraduateStudentTakeCourse INNER JOIN undergraduateStudent ON undergraduateStudentTakeCourse.undergraduateStudentID=undergraduateStudent.nr INNER JOIN department ON undergraduateStudent.memberOf=department.nr INNER JOIN undergraduateCourse ON undergraduateStudentTakeCourse.undergraduateCourseID=undergraduateCourse.nr "
-n95d286e0f9094126bce11866afcb8e42b256,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu
-n95d286e0f9094126bce11866afcb8e42b243,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM25,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b8
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM12,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b102
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM46,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b265
-n95d286e0f9094126bce11866afcb8e42b26,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b29
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM47,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b156
-n95d286e0f9094126bce11866afcb8e42b238,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b104,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b107
-n95d286e0f9094126bce11866afcb8e42b11,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b265,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM4,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b163
-n95d286e0f9094126bce11866afcb8e42b176,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b178
-n95d286e0f9094126bce11866afcb8e42b213,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM43,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b235
-n95d286e0f9094126bce11866afcb8e42b13,http://w3id.org/rml/query,"
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b180,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}
-n95d286e0f9094126bce11866afcb8e42b232,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-n95d286e0f9094126bce11866afcb8e42b183,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b254,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b256
-n95d286e0f9094126bce11866afcb8e42b48,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM34,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b254
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM48,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b278
-n95d286e0f9094126bce11866afcb8e42b121,http://w3id.org/rml/query,"
-        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
-        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr "
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM8,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b264
-n95d286e0f9094126bce11866afcb8e42b130,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM10,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b272
-n95d286e0f9094126bce11866afcb8e42b11,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#worksfor
-n95d286e0f9094126bce11866afcb8e42b68,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b71
-n95d286e0f9094126bce11866afcb8e42b175,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b226,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#university
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM20,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b246
-n95d286e0f9094126bce11866afcb8e42b116,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b118
-n95d286e0f9094126bce11866afcb8e42b38,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b41
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM23,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b56
-n95d286e0f9094126bce11866afcb8e42b36,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b21,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b42,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-n95d286e0f9094126bce11866afcb8e42b206,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b207
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM35,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b222
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM11,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b200
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM9,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b194
-n95d286e0f9094126bce11866afcb8e42b237,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b203,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM26,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b13
-n95d286e0f9094126bce11866afcb8e42b77,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
-n95d286e0f9094126bce11866afcb8e42b269,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationauthor
-n95d286e0f9094126bce11866afcb8e42b189,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b15,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b146,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b147
-n95d286e0f9094126bce11866afcb8e42b119,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#researchinterest
-n95d286e0f9094126bce11866afcb8e42b289,http://w3id.org/rml/query,"
+n03e41f9f651e4af5825ed26bc9304c2eb148,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb261,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb242,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb245
+n03e41f9f651e4af5825ed26bc9304c2eb86,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb87
+n03e41f9f651e4af5825ed26bc9304c2eb227,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM24,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb144
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM30,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb146
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM47,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb151
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM27,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb19
+n03e41f9f651e4af5825ed26bc9304c2eb58,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb282,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM43,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb236
+n03e41f9f651e4af5825ed26bc9304c2eb3,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb63,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb192,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb65,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb281,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb289,http://w3id.org/rml/query,"
         SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
         FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM13,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b212
-n95d286e0f9094126bce11866afcb8e42b220,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduatestudent
-n95d286e0f9094126bce11866afcb8e42b269,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b258,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b8,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b10
-n95d286e0f9094126bce11866afcb8e42b38,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b40
-n95d286e0f9094126bce11866afcb8e42b254,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b255
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM2,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b84
-n95d286e0f9094126bce11866afcb8e42b135,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM30,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b146
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM40,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b247
-n95d286e0f9094126bce11866afcb8e42b98,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b101
-n95d286e0f9094126bce11866afcb8e42b85,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM46,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b266
-n95d286e0f9094126bce11866afcb8e42b255,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b50,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b53
-n95d286e0f9094126bce11866afcb8e42b260,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b262
-n95d286e0f9094126bce11866afcb8e42b98,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b100
-n95d286e0f9094126bce11866afcb8e42b114,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-n95d286e0f9094126bce11866afcb8e42b31,http://w3id.org/rml/query,"
-        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
-        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr "
-n95d286e0f9094126bce11866afcb8e42b154,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM27,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b19
-n95d286e0f9094126bce11866afcb8e42b86,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b88
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM14,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b86
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM44,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b138
-n95d286e0f9094126bce11866afcb8e42b124,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b236,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b237
-n95d286e0f9094126bce11866afcb8e42b46,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b115,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b51,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b75,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b185,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM39,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b127
-n95d286e0f9094126bce11866afcb8e42b122,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b125
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM30,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b145
-n95d286e0f9094126bce11866afcb8e42b184,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b20,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b22
-n95d286e0f9094126bce11866afcb8e42b96,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b247,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM0,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b78
-n95d286e0f9094126bce11866afcb8e42b106,http://w3id.org/rml/reference,graduatestudentname
-n95d286e0f9094126bce11866afcb8e42b122,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b124
-n95d286e0f9094126bce11866afcb8e42b84,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu
-n95d286e0f9094126bce11866afcb8e42b5,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM32,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b50
-n95d286e0f9094126bce11866afcb8e42b107,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM15,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b175
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM8,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b259
-n95d286e0f9094126bce11866afcb8e42b284,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b286
-n95d286e0f9094126bce11866afcb8e42b271,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b231,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b253,http://w3id.org/rml/query,"
-        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
-        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr "
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM34,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b253
-n95d286e0f9094126bce11866afcb8e42b9,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b196,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#publication
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM25,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b7
-n95d286e0f9094126bce11866afcb8e42b95,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
-n95d286e0f9094126bce11866afcb8e42b266,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b268
-n95d286e0f9094126bce11866afcb8e42b118,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b188,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b190
-n95d286e0f9094126bce11866afcb8e42b53,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b219,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b153,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b105,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM29,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b284
-n95d286e0f9094126bce11866afcb8e42b133,http://w3id.org/rml/query,"
-        SELECT undergraduateCourse.name AS undergraduatecoursename, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, department.subOrganizationOf as universitynr
-        FROM undergraduateCourse INNER JOIN graduateStudent ON undergraduateCourse.teachingAssistant=graduateStudent.nr INNER JOIN department ON graduateStudent.memberOf=department.nr "
-n95d286e0f9094126bce11866afcb8e42b57,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b27,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b93,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM15,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b176
-n95d286e0f9094126bce11866afcb8e42b71,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM37,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b104
-n95d286e0f9094126bce11866afcb8e42b8,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b11
-n95d286e0f9094126bce11866afcb8e42b287,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#teacherof
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM28,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b38
-n95d286e0f9094126bce11866afcb8e42b139,http://w3id.org/rml/query,"
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b181,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b286,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b91,http://w3id.org/rml/query,"
-        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
-        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr "
-n95d286e0f9094126bce11866afcb8e42b7,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b218,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b220
-n95d286e0f9094126bce11866afcb8e42b171,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM21,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b187
-n95d286e0f9094126bce11866afcb8e42b2,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b5
-n95d286e0f9094126bce11866afcb8e42b230,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b233
-n95d286e0f9094126bce11866afcb8e42b74,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b75
-n95d286e0f9094126bce11866afcb8e42b3,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b224,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b225
-n95d286e0f9094126bce11866afcb8e42b190,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#lecturer
-n95d286e0f9094126bce11866afcb8e42b272,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b275
-n95d286e0f9094126bce11866afcb8e42b56,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b57
-n95d286e0f9094126bce11866afcb8e42b51,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b238,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM14,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b85
-n95d286e0f9094126bce11866afcb8e42b263,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationauthor
-n95d286e0f9094126bce11866afcb8e42b99,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b233,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor
-n95d286e0f9094126bce11866afcb8e42b87,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b128,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b130
-n95d286e0f9094126bce11866afcb8e42b10,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b179,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-n95d286e0f9094126bce11866afcb8e42b204,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/researchGroup{researchgroupnr}.edu
-n95d286e0f9094126bce11866afcb8e42b272,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b273
-n95d286e0f9094126bce11866afcb8e42b47,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#abstract
-n95d286e0f9094126bce11866afcb8e42b58,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b140,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b142
-n95d286e0f9094126bce11866afcb8e42b54,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b149,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM36,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b229
-n95d286e0f9094126bce11866afcb8e42b83,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM37,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b103
-n95d286e0f9094126bce11866afcb8e42b147,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM42,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b181
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM33,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b121
-n95d286e0f9094126bce11866afcb8e42b45,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b161,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b257,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b209,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-n95d286e0f9094126bce11866afcb8e42b229,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b225,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b284,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b285
-n95d286e0f9094126bce11866afcb8e42b144,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-n95d286e0f9094126bce11866afcb8e42b159,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b172,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b194,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b195
-n95d286e0f9094126bce11866afcb8e42b39,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b44,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b46
-n95d286e0f9094126bce11866afcb8e42b292,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b44,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b47
-n95d286e0f9094126bce11866afcb8e42b104,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b105
-n95d286e0f9094126bce11866afcb8e42b239,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor
-n95d286e0f9094126bce11866afcb8e42b136,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b81,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b142,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b53,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailaddress
-n95d286e0f9094126bce11866afcb8e42b67,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b80,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b83
-n95d286e0f9094126bce11866afcb8e42b129,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b128,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b131
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM0,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b73
-n95d286e0f9094126bce11866afcb8e42b273,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b86,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b89
-n95d286e0f9094126bce11866afcb8e42b127,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM13,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b216
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM13,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b211
-n95d286e0f9094126bce11866afcb8e42b92,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b93
-n95d286e0f9094126bce11866afcb8e42b168,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu
-n95d286e0f9094126bce11866afcb8e42b86,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b87
-n95d286e0f9094126bce11866afcb8e42b234,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b193,http://w3id.org/rml/query,"
-        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
-        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM43,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b236
-n95d286e0f9094126bce11866afcb8e42b176,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b177
-n95d286e0f9094126bce11866afcb8e42b288,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM31,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b96
-n95d286e0f9094126bce11866afcb8e42b190,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b34,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM31,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b92
-n95d286e0f9094126bce11866afcb8e42b199,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b209,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b37,http://w3id.org/rml/query,"
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b25,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b154,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
-n95d286e0f9094126bce11866afcb8e42b52,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b136,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
-n95d286e0f9094126bce11866afcb8e42b50,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b51
-n95d286e0f9094126bce11866afcb8e42b248,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b250
-n95d286e0f9094126bce11866afcb8e42b28,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b151,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b165,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b99,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM15,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b180
-n95d286e0f9094126bce11866afcb8e42b263,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b152,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b155
-n95d286e0f9094126bce11866afcb8e42b166,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#department
-n95d286e0f9094126bce11866afcb8e42b34,http://w3id.org/rml/template,http://www.university{undergraduatedegreefrom}.edu
-n95d286e0f9094126bce11866afcb8e42b100,http://w3id.org/rml/reference,undergraduatecoursename
-n95d286e0f9094126bce11866afcb8e42b244,http://w3id.org/rml/template,http://www.department{headof}.university{universitynr}.edu
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM46,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b270
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM39,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b128
-n95d286e0f9094126bce11866afcb8e42b235,http://w3id.org/rml/query,"
-        SELECT department.nr AS departmentnr, department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, faculty.name AS facultyname
-        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr INNER JOIN faculty ON graduateStudent.advisor=faculty.nr "
-n95d286e0f9094126bce11866afcb8e42b131,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone
-n95d286e0f9094126bce11866afcb8e42b77,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b61,http://w3id.org/rml/query,"
-        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
-        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr "
-n95d286e0f9094126bce11866afcb8e42b49,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b7,http://w3id.org/rml/query,"
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b251,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#memberof
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM29,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b283
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM36,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b230
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM8,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b260
-n95d286e0f9094126bce11866afcb8e42b111,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b19,http://w3id.org/rml/query,"
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b80,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b81
-n95d286e0f9094126bce11866afcb8e42b70,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM36,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b234
-n95d286e0f9094126bce11866afcb8e42b265,http://w3id.org/rml/query,"
+n03e41f9f651e4af5825ed26bc9304c2eb117,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb130,http://w3id.org/rml/reference,telephone
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM38,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb62
+n03e41f9f651e4af5825ed26bc9304c2eb230,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb231
+n03e41f9f651e4af5825ed26bc9304c2eb43,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb77,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+n03e41f9f651e4af5825ed26bc9304c2eb41,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb35,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduatedegreefrom
+n03e41f9f651e4af5825ed26bc9304c2eb58,http://w3id.org/rml/reference,emailaddress
+n03e41f9f651e4af5825ed26bc9304c2eb251,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM6,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb290
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM14,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb86
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM16,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb174
+n03e41f9f651e4af5825ed26bc9304c2eb260,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb261
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM13,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb211
+n03e41f9f651e4af5825ed26bc9304c2eb165,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb27,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb141,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb179,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM11,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb200
+n03e41f9f651e4af5825ed26bc9304c2eb75,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb110,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb111
+n03e41f9f651e4af5825ed26bc9304c2eb134,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb136
+n03e41f9f651e4af5825ed26bc9304c2eb204,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/researchGroup{researchgroupnr}.edu
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM26,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb14
+n03e41f9f651e4af5825ed26bc9304c2eb265,http://w3id.org/rml/query,"
         SELECT publication.name AS publicationname, graduateStudent.name AS graduatestudentname, faculty.name AS facultyname, department.nr AS departmentnr, department.subOrganizationOf AS universitynr
         FROM coAuthorOfPublication INNER JOIN publication ON coAuthorOfPublication.publicationID=publication.nr INNER JOIN faculty ON publication.mainAuthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr INNER JOIN graduateStudent ON coAuthorOfPublication.graduateStudentID=graduateStudent.nr "
-n95d286e0f9094126bce11866afcb8e42b146,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b149
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM23,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b55
-n95d286e0f9094126bce11866afcb8e42b203,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-n95d286e0f9094126bce11866afcb8e42b123,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b142,http://w3id.org/rml/reference,telephone
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM45,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b205
-n95d286e0f9094126bce11866afcb8e42b175,http://w3id.org/rml/query,"
-        SELECT subOrganizationOf AS universitynr, graduateCourse.name AS graduatecoursename, department.nr AS departmentnr
-        FROM graduateCourse INNER JOIN faculty ON graduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b32,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b34
-n95d286e0f9094126bce11866afcb8e42b176,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b179
-n95d286e0f9094126bce11866afcb8e42b281,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b276,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/researchGroup{researchgroupnr}.edu
-n95d286e0f9094126bce11866afcb8e42b214,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduatecourse
-n95d286e0f9094126bce11866afcb8e42b235,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b294,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
-n95d286e0f9094126bce11866afcb8e42b281,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#takescourse
-n95d286e0f9094126bce11866afcb8e42b23,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b195,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b201,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM19,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b116
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM21,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b192
-n95d286e0f9094126bce11866afcb8e42b206,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b208
-n95d286e0f9094126bce11866afcb8e42b113,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM37,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b108
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM32,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b49
-n95d286e0f9094126bce11866afcb8e42b244,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM5,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b67
-n95d286e0f9094126bce11866afcb8e42b112,http://w3id.org/rml/reference,facultyname
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM31,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b91
-n95d286e0f9094126bce11866afcb8e42b250,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM38,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b66
-n95d286e0f9094126bce11866afcb8e42b233,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b230,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b231
-n95d286e0f9094126bce11866afcb8e42b224,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b227
-n95d286e0f9094126bce11866afcb8e42b226,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b259,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM47,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b152
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM20,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b242
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM24,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b139
-n95d286e0f9094126bce11866afcb8e42b100,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b64,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b1,http://w3id.org/rml/query,"
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
-        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr WHERE professor.professorType='assistantProfessor' "
-n95d286e0f9094126bce11866afcb8e42b140,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b141
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM41,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b32
-n95d286e0f9094126bce11866afcb8e42b199,http://w3id.org/rml/query,"
-        SELECT researchGroup.nr AS researchgroupnr, researchGroup.subOrganizationOf AS departmentnr, department.subOrganizationOf AS universitynr
-        FROM researchGroup INNER JOIN department ON researchGroup.subOrganizationOf=department.nr "
-n95d286e0f9094126bce11866afcb8e42b117,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b243,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM9,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b193
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM19,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b115
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM32,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b54
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM5,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b72
-n95d286e0f9094126bce11866afcb8e42b133,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b194,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b197
-n95d286e0f9094126bce11866afcb8e42b279,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b213,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b10,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu
-n95d286e0f9094126bce11866afcb8e42b239,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b122,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b123
-n95d286e0f9094126bce11866afcb8e42b85,http://w3id.org/rml/query,"
-        SELECT subOrganizationOf AS universitynr, graduateCourse.name AS graduatecoursename, department.nr AS departmentnr
-        FROM graduateCourse INNER JOIN faculty ON graduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b134,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b135
-n95d286e0f9094126bce11866afcb8e42b158,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b161
-n95d286e0f9094126bce11866afcb8e42b194,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b196
-n95d286e0f9094126bce11866afcb8e42b212,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b213
-n95d286e0f9094126bce11866afcb8e42b242,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b243
-n95d286e0f9094126bce11866afcb8e42b18,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-n95d286e0f9094126bce11866afcb8e42b33,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b80,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b82
-n95d286e0f9094126bce11866afcb8e42b95,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b285,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b120,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-n95d286e0f9094126bce11866afcb8e42b222,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b188,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b189
-n95d286e0f9094126bce11866afcb8e42b162,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM11,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b199
-n95d286e0f9094126bce11866afcb8e42b116,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b119
-n95d286e0f9094126bce11866afcb8e42b261,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b71,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM17,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b6
-n95d286e0f9094126bce11866afcb8e42b228,http://w3id.org/rml/template,http://www.university{nr}.edu
-n95d286e0f9094126bce11866afcb8e42b126,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM0,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b74
-n95d286e0f9094126bce11866afcb8e42b205,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b74,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b76
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM7,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b48
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM1,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b223
-n95d286e0f9094126bce11866afcb8e42b182,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b184
-n95d286e0f9094126bce11866afcb8e42b237,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b163,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b173,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-n95d286e0f9094126bce11866afcb8e42b188,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b191
-n95d286e0f9094126bce11866afcb8e42b26,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b27
-n95d286e0f9094126bce11866afcb8e42b283,http://w3id.org/rml/query,"
-        SELECT faculty.name AS facultyname, department.nr AS departmentnr, department.subOrganizationOf AS universitynr, graduateCourse.name AS graduatecoursename
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr INNER JOIN graduateCourse ON graduateCourse.teacher=faculty.nr "
-n95d286e0f9094126bce11866afcb8e42b69,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b291,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b140,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b143
-n95d286e0f9094126bce11866afcb8e42b74,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b77
-n95d286e0f9094126bce11866afcb8e42b75,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM40,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b248
-n95d286e0f9094126bce11866afcb8e42b43,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b245,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#headof
-n95d286e0f9094126bce11866afcb8e42b110,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b113
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM48,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b282
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM2,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b79
-n95d286e0f9094126bce11866afcb8e42b29,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#suborganizationof
-n95d286e0f9094126bce11866afcb8e42b103,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b97,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b5,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-n95d286e0f9094126bce11866afcb8e42b280,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b218,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b219
-n95d286e0f9094126bce11866afcb8e42b79,http://w3id.org/rml/query,"
-        SELECT nr AS departmentnr, subOrganizationOf AS universitynr, name
-        FROM department "
-n95d286e0f9094126bce11866afcb8e42b278,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b280
-n95d286e0f9094126bce11866afcb8e42b197,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-n95d286e0f9094126bce11866afcb8e42b231,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b173,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b148,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b217,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b277,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b38,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b39
-n95d286e0f9094126bce11866afcb8e42b280,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM42,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b182
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM43,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b240
-n95d286e0f9094126bce11866afcb8e42b236,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b238
-n95d286e0f9094126bce11866afcb8e42b21,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b266,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b267
-n95d286e0f9094126bce11866afcb8e42b110,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b112
-n95d286e0f9094126bce11866afcb8e42b246,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
-n95d286e0f9094126bce11866afcb8e42b255,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
-n95d286e0f9094126bce11866afcb8e42b88,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b152,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b153
-n95d286e0f9094126bce11866afcb8e42b112,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b200,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b201
-n95d286e0f9094126bce11866afcb8e42b241,http://w3id.org/rml/query,"
+n03e41f9f651e4af5825ed26bc9304c2eb153,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb178,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#graduatecourse
+n03e41f9f651e4af5825ed26bc9304c2eb235,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM40,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb252
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM42,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb182
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM44,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb133
+n03e41f9f651e4af5825ed26bc9304c2eb183,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb288,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb172,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb47,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM15,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb180
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM28,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb37
+n03e41f9f651e4af5825ed26bc9304c2eb50,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb53
+n03e41f9f651e4af5825ed26bc9304c2eb229,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb146,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb149
+n03e41f9f651e4af5825ed26bc9304c2eb200,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb203
+n03e41f9f651e4af5825ed26bc9304c2eb270,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+n03e41f9f651e4af5825ed26bc9304c2eb28,http://w3id.org/rml/template,http://www.university{universitynr}.edu
+n03e41f9f651e4af5825ed26bc9304c2eb49,http://w3id.org/rml/query,"
+        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
+        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr "
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM26,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb13
+n03e41f9f651e4af5825ed26bc9304c2eb91,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb82,http://w3id.org/rml/reference,name
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM24,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb140
+n03e41f9f651e4af5825ed26bc9304c2eb7,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM43,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb240
+n03e41f9f651e4af5825ed26bc9304c2eb146,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb147
+n03e41f9f651e4af5825ed26bc9304c2eb137,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#teachingassistantof
+n03e41f9f651e4af5825ed26bc9304c2eb143,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb272,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb273
+n03e41f9f651e4af5825ed26bc9304c2eb266,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb269
+n03e41f9f651e4af5825ed26bc9304c2eb241,http://w3id.org/rml/query,"
         SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, researchInterest AS researchinterest, headOf AS headof
         FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
-n95d286e0f9094126bce11866afcb8e42b26,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b28
-n95d286e0f9094126bce11866afcb8e42b197,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b293,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b272,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b274
-n95d286e0f9094126bce11866afcb8e42b240,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
-n95d286e0f9094126bce11866afcb8e42b82,http://w3id.org/rml/reference,name
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM24,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b144
-n95d286e0f9094126bce11866afcb8e42b158,http://w3id.org/rml/graphMap,n95d286e0f9094126bce11866afcb8e42b159
-n95d286e0f9094126bce11866afcb8e42b62,http://w3id.org/rml/objectMap,n95d286e0f9094126bce11866afcb8e42b64
-n95d286e0f9094126bce11866afcb8e42b229,http://w3id.org/rml/query,"
-        SELECT department.nr AS departmentnr, department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, faculty.name AS facultyname
-        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr INNER JOIN faculty ON undergraduateStudent.advisor=faculty.nr "
-n95d286e0f9094126bce11866afcb8e42b205,http://w3id.org/rml/query,"
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM32,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb50
+n03e41f9f651e4af5825ed26bc9304c2eb249,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb179,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb129,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb190,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb138,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+n03e41f9f651e4af5825ed26bc9304c2eb214,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb256,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu
+n03e41f9f651e4af5825ed26bc9304c2eb291,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb122,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb125
+n03e41f9f651e4af5825ed26bc9304c2eb51,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM41,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb36
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM1,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb228
+n03e41f9f651e4af5825ed26bc9304c2eb44,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb47
+n03e41f9f651e4af5825ed26bc9304c2eb26,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb27
+n03e41f9f651e4af5825ed26bc9304c2eb20,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb21
+n03e41f9f651e4af5825ed26bc9304c2eb224,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb226
+n03e41f9f651e4af5825ed26bc9304c2eb231,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb174,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb244,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb164,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb165
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM21,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb192
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM35,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb217
+n03e41f9f651e4af5825ed26bc9304c2eb212,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb213
+n03e41f9f651e4af5825ed26bc9304c2eb87,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb242,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb243
+n03e41f9f651e4af5825ed26bc9304c2eb237,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM23,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb60
+n03e41f9f651e4af5825ed26bc9304c2eb163,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb190,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#lecturer
+n03e41f9f651e4af5825ed26bc9304c2eb8,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb11
+n03e41f9f651e4af5825ed26bc9304c2eb230,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb233
+n03e41f9f651e4af5825ed26bc9304c2eb147,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb242,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb244
+n03e41f9f651e4af5825ed26bc9304c2eb273,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb116,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb117
+n03e41f9f651e4af5825ed26bc9304c2eb9,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb140,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb142
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM19,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb115
+n03e41f9f651e4af5825ed26bc9304c2eb257,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#memberof
+n03e41f9f651e4af5825ed26bc9304c2eb79,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb235,http://w3id.org/rml/query,"
+        SELECT department.nr AS departmentnr, department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, faculty.name AS facultyname
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr INNER JOIN faculty ON graduateStudent.advisor=faculty.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb88,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb160,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb251,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#memberof
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM39,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb128
+n03e41f9f651e4af5825ed26bc9304c2eb152,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb153
+n03e41f9f651e4af5825ed26bc9304c2eb258,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+n03e41f9f651e4af5825ed26bc9304c2eb212,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb214
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM27,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb20
+n03e41f9f651e4af5825ed26bc9304c2eb68,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb69
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM0,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb74
+n03e41f9f651e4af5825ed26bc9304c2eb173,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+n03e41f9f651e4af5825ed26bc9304c2eb40,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb148,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
+n03e41f9f651e4af5825ed26bc9304c2eb161,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM7,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb43
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM20,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb246
+n03e41f9f651e4af5825ed26bc9304c2eb191,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM11,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb204
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM31,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb92
+n03e41f9f651e4af5825ed26bc9304c2eb206,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb207
+n03e41f9f651e4af5825ed26bc9304c2eb243,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb84,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu
+n03e41f9f651e4af5825ed26bc9304c2eb110,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb113
+n03e41f9f651e4af5825ed26bc9304c2eb111,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM16,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb170
+n03e41f9f651e4af5825ed26bc9304c2eb94,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb156,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+n03e41f9f651e4af5825ed26bc9304c2eb81,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb134,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb137
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM14,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb85
+n03e41f9f651e4af5825ed26bc9304c2eb259,http://w3id.org/rml/query,"
+        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
+        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb285,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb162,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb266,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb268
+n03e41f9f651e4af5825ed26bc9304c2eb168,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu
+n03e41f9f651e4af5825ed26bc9304c2eb269,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationauthor
+n03e41f9f651e4af5825ed26bc9304c2eb99,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb189,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb69,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb205,http://w3id.org/rml/query,"
         SELECT undergraduateCourse.name AS undergraduatecoursename, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, department.subOrganizationOf as universitynr
         FROM undergraduateCourse INNER JOIN graduateStudent ON undergraduateCourse.teachingAssistant=graduateStudent.nr INNER JOIN department ON graduateStudent.memberOf=department.nr "
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM24,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b140
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM6,http://w3id.org/rml/logicalSource,n95d286e0f9094126bce11866afcb8e42b289
-n95d286e0f9094126bce11866afcb8e42b4,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#assistantprofessor
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM1,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b224
-n95d286e0f9094126bce11866afcb8e42b145,http://w3id.org/rml/query,"
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM28,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb38
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM43,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb235
+n03e41f9f651e4af5825ed26bc9304c2eb290,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb291
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM37,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb104
+n03e41f9f651e4af5825ed26bc9304c2eb1,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb219,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM1,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb224
+n03e41f9f651e4af5825ed26bc9304c2eb49,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb127,http://w3id.org/rml/query,"
+        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb248,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb250
+n03e41f9f651e4af5825ed26bc9304c2eb267,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb25,http://w3id.org/rml/query,"
+        SELECT nr AS departmentnr, subOrganizationOf AS universitynr, name
+        FROM department "
+n03e41f9f651e4af5825ed26bc9304c2eb212,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb215
+n03e41f9f651e4af5825ed26bc9304c2eb155,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb291,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb213,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb29,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#suborganizationof
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM5,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb68
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM30,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb145
+n03e41f9f651e4af5825ed26bc9304c2eb167,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb157,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb262,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb284,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb287
+n03e41f9f651e4af5825ed26bc9304c2eb250,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu
+n03e41f9f651e4af5825ed26bc9304c2eb272,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb275
+n03e41f9f651e4af5825ed26bc9304c2eb161,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb108,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+n03e41f9f651e4af5825ed26bc9304c2eb191,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM46,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb270
+n03e41f9f651e4af5825ed26bc9304c2eb83,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+n03e41f9f651e4af5825ed26bc9304c2eb280,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb68,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb70
+n03e41f9f651e4af5825ed26bc9304c2eb76,http://w3id.org/rml/reference,name
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM9,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb193
+n03e41f9f651e4af5825ed26bc9304c2eb203,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM47,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb152
+n03e41f9f651e4af5825ed26bc9304c2eb196,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb100,http://w3id.org/rml/reference,undergraduatecoursename
+n03e41f9f651e4af5825ed26bc9304c2eb211,http://w3id.org/rml/query,"
+        SELECT subOrganizationOf AS universitynr, undergraduateCourse.name AS undergraduatecoursename, department.nr AS departmentnr
+        FROM undergraduateCourse INNER JOIN faculty ON undergraduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb202,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#researchgroup
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM40,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb248
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM41,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb32
+n03e41f9f651e4af5825ed26bc9304c2eb182,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb185
+n03e41f9f651e4af5825ed26bc9304c2eb102,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
+n03e41f9f651e4af5825ed26bc9304c2eb56,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb59
+n03e41f9f651e4af5825ed26bc9304c2eb118,http://w3id.org/rml/reference,researchinterest
+n03e41f9f651e4af5825ed26bc9304c2eb277,http://w3id.org/rml/query,"
+        SELECT graduateStudent.name AS graduatestudentname, graduateCourse.name AS graduatecoursename, department.nr AS departmentnr, department.subOrganizationOf AS universitynr
+        FROM graduateStudentTakeCourse INNER JOIN graduateStudent ON graduateStudentTakeCourse.graduateStudentID=graduateStudent.nr INNER JOIN department ON graduateStudent.memberOf=department.nr INNER JOIN graduateCourse ON graduateStudentTakeCourse.graduateCourseID=graduateCourse.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb40,http://w3id.org/rml/template,http://www.university{undergraduatedegreefrom}.edu
+n03e41f9f651e4af5825ed26bc9304c2eb202,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM44,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb134
+n03e41f9f651e4af5825ed26bc9304c2eb239,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb293,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#title
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM9,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb198
+n03e41f9f651e4af5825ed26bc9304c2eb134,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb135
+n03e41f9f651e4af5825ed26bc9304c2eb260,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb263
+n03e41f9f651e4af5825ed26bc9304c2eb105,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM20,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb241
+n03e41f9f651e4af5825ed26bc9304c2eb208,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM41,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb31
+n03e41f9f651e4af5825ed26bc9304c2eb194,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb196
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM25,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb8
+n03e41f9f651e4af5825ed26bc9304c2eb173,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb45,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb104,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb107
+n03e41f9f651e4af5825ed26bc9304c2eb218,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb219
+n03e41f9f651e4af5825ed26bc9304c2eb206,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb209
+n03e41f9f651e4af5825ed26bc9304c2eb2,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb5
+n03e41f9f651e4af5825ed26bc9304c2eb245,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM10,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb272
+n03e41f9f651e4af5825ed26bc9304c2eb240,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+n03e41f9f651e4af5825ed26bc9304c2eb87,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb149,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#teacherof
+n03e41f9f651e4af5825ed26bc9304c2eb60,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb172,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#fullprofessor
+n03e41f9f651e4af5825ed26bc9304c2eb187,http://w3id.org/rml/query,"
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
+        FROM lecturer INNER JOIN faculty ON lecturer.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM23,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb55
+n03e41f9f651e4af5825ed26bc9304c2eb114,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb17,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb255,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb263,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#publicationauthor
+n03e41f9f651e4af5825ed26bc9304c2eb46,http://w3id.org/rml/reference,publicationabstract
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM7,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb48
+n03e41f9f651e4af5825ed26bc9304c2eb44,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb45
+n03e41f9f651e4af5825ed26bc9304c2eb203,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb215,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb145,http://w3id.org/rml/query,"
         SELECT faculty.name AS facultyname, department.nr AS departmentnr, department.subOrganizationOf AS universitynr, undergraduateCourse.name AS undergraduatecoursename
         FROM faculty INNER JOIN department ON worksFor=department.nr INNER JOIN undergraduateCourse ON undergraduateCourse.teacher=faculty.nr "
-n95d286e0f9094126bce11866afcb8e42b202,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#researchgroup
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM39,http://w3id.org/rml/subjectMap,n95d286e0f9094126bce11866afcb8e42b132
-n95d286e0f9094126bce11866afcb8e42b177,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b1,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
-n95d286e0f9094126bce11866afcb8e42b101,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b4,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
-n95d286e0f9094126bce11866afcb8e42b284,http://w3id.org/rml/predicateMap,n95d286e0f9094126bce11866afcb8e42b287
-file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM7,http://w3id.org/rml/predicateObjectMap,n95d286e0f9094126bce11866afcb8e42b44
+n03e41f9f651e4af5825ed26bc9304c2eb193,http://w3id.org/rml/query,"
+        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
+        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb287,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb123,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb23,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#masterdegreefrom
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM34,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb254
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM9,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb194
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM17,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb2
+n03e41f9f651e4af5825ed26bc9304c2eb67,http://w3id.org/rml/query,"
+        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
+        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb184,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb111,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb188,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb189
+n03e41f9f651e4af5825ed26bc9304c2eb276,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/researchGroup{researchgroupnr}.edu
+n03e41f9f651e4af5825ed26bc9304c2eb64,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb143,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone
+n03e41f9f651e4af5825ed26bc9304c2eb286,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb36,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+n03e41f9f651e4af5825ed26bc9304c2eb195,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM34,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb253
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM28,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb42
+n03e41f9f651e4af5825ed26bc9304c2eb222,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM5,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb72
+n03e41f9f651e4af5825ed26bc9304c2eb126,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+n03e41f9f651e4af5825ed26bc9304c2eb48,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+n03e41f9f651e4af5825ed26bc9304c2eb61,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM47,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb156
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM42,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb186
+n03e41f9f651e4af5825ed26bc9304c2eb113,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb89,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+n03e41f9f651e4af5825ed26bc9304c2eb170,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb172
+n03e41f9f651e4af5825ed26bc9304c2eb39,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb70,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb239,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor
+n03e41f9f651e4af5825ed26bc9304c2eb57,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb197,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+n03e41f9f651e4af5825ed26bc9304c2eb253,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb82,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM37,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb108
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM33,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb121
+n03e41f9f651e4af5825ed26bc9304c2eb228,http://w3id.org/rml/template,http://www.university{nr}.edu
+n03e41f9f651e4af5825ed26bc9304c2eb62,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb63
+n03e41f9f651e4af5825ed26bc9304c2eb166,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb47,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#abstract
+n03e41f9f651e4af5825ed26bc9304c2eb262,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb93,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb101,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+n03e41f9f651e4af5825ed26bc9304c2eb136,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM48,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb277
+n03e41f9f651e4af5825ed26bc9304c2eb281,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#takescourse
+n03e41f9f651e4af5825ed26bc9304c2eb62,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb65
+n03e41f9f651e4af5825ed26bc9304c2eb21,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM18,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb162
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM36,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb234
+n03e41f9f651e4af5825ed26bc9304c2eb158,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb160
+n03e41f9f651e4af5825ed26bc9304c2eb10,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu
+n03e41f9f651e4af5825ed26bc9304c2eb220,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb4,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#assistantprofessor
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM5,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb67
+n03e41f9f651e4af5825ed26bc9304c2eb279,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb69,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb278,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb279
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM3,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb25
+n03e41f9f651e4af5825ed26bc9304c2eb176,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb177
+n03e41f9f651e4af5825ed26bc9304c2eb20,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb22
+n03e41f9f651e4af5825ed26bc9304c2eb205,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb4,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb135,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb244,http://w3id.org/rml/template,http://www.department{headof}.university{universitynr}.edu
+n03e41f9f651e4af5825ed26bc9304c2eb159,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM15,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb175
+n03e41f9f651e4af5825ed26bc9304c2eb254,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb257
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM36,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb229
+n03e41f9f651e4af5825ed26bc9304c2eb59,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailaddress
+n03e41f9f651e4af5825ed26bc9304c2eb177,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb252,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM16,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb169
+n03e41f9f651e4af5825ed26bc9304c2eb200,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb201
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM37,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb103
+n03e41f9f651e4af5825ed26bc9304c2eb86,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb88
+n03e41f9f651e4af5825ed26bc9304c2eb125,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone
+n03e41f9f651e4af5825ed26bc9304c2eb175,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb207,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb198,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+n03e41f9f651e4af5825ed26bc9304c2eb15,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM17,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb6
+n03e41f9f651e4af5825ed26bc9304c2eb37,http://w3id.org/rml/query,"
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb163,http://w3id.org/rml/query,"
+        SELECT nr AS departmentnr, subOrganizationOf AS universitynr, name
+        FROM department "
+n03e41f9f651e4af5825ed26bc9304c2eb124,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb64,http://w3id.org/rml/reference,emailaddress
+n03e41f9f651e4af5825ed26bc9304c2eb121,http://w3id.org/rml/query,"
+        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
+        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb97,http://w3id.org/rml/query,"
+        SELECT subOrganizationOf AS universitynr, undergraduateCourse.name AS undergraduatecoursename, department.nr AS departmentnr
+        FROM undergraduateCourse INNER JOIN faculty ON undergraduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb275,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#suborganizationof
+n03e41f9f651e4af5825ed26bc9304c2eb200,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb202
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM22,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb114
+n03e41f9f651e4af5825ed26bc9304c2eb185,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+n03e41f9f651e4af5825ed26bc9304c2eb211,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb42,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb43,http://w3id.org/rml/query,"
+        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
+        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb52,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM2,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb80
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM0,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb73
+n03e41f9f651e4af5825ed26bc9304c2eb274,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM18,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb157
+n03e41f9f651e4af5825ed26bc9304c2eb149,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb131,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb201,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb62,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb64
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM4,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb163
+n03e41f9f651e4af5825ed26bc9304c2eb52,http://w3id.org/rml/reference,emailaddress
+n03e41f9f651e4af5825ed26bc9304c2eb140,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb141
+n03e41f9f651e4af5825ed26bc9304c2eb170,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb173
+n03e41f9f651e4af5825ed26bc9304c2eb141,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM30,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb150
+n03e41f9f651e4af5825ed26bc9304c2eb113,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM35,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb218
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM17,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb1
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM10,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb271
+n03e41f9f651e4af5825ed26bc9304c2eb171,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb206,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb208
+n03e41f9f651e4af5825ed26bc9304c2eb294,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM1,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb223
+n03e41f9f651e4af5825ed26bc9304c2eb164,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb167
+n03e41f9f651e4af5825ed26bc9304c2eb70,http://w3id.org/rml/reference,publicationname
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM22,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb110
+n03e41f9f651e4af5825ed26bc9304c2eb29,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb73,http://w3id.org/rml/tablename,university
+n03e41f9f651e4af5825ed26bc9304c2eb85,http://w3id.org/rml/query,"
+        SELECT subOrganizationOf AS universitynr, graduateCourse.name AS graduatecoursename, department.nr AS departmentnr
+        FROM graduateCourse INNER JOIN faculty ON graduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb20,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb23
+n03e41f9f651e4af5825ed26bc9304c2eb210,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+n03e41f9f651e4af5825ed26bc9304c2eb187,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb264,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}
+n03e41f9f651e4af5825ed26bc9304c2eb253,http://w3id.org/rml/query,"
+        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
+        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb66,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM2,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb79
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM33,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb126
+n03e41f9f651e4af5825ed26bc9304c2eb166,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#department
+n03e41f9f651e4af5825ed26bc9304c2eb284,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb285
+n03e41f9f651e4af5825ed26bc9304c2eb181,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb14,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb16
+n03e41f9f651e4af5825ed26bc9304c2eb183,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb241,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM3,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb30
+n03e41f9f651e4af5825ed26bc9304c2eb63,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb46,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb53,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb197,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb2,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb4
+n03e41f9f651e4af5825ed26bc9304c2eb268,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+n03e41f9f651e4af5825ed26bc9304c2eb26,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb29
+n03e41f9f651e4af5825ed26bc9304c2eb181,http://w3id.org/rml/query,"
+        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr "
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM44,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb138
+n03e41f9f651e4af5825ed26bc9304c2eb80,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb82
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM32,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb49
+n03e41f9f651e4af5825ed26bc9304c2eb35,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb185,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM2,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb84
+n03e41f9f651e4af5825ed26bc9304c2eb236,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb237
+n03e41f9f651e4af5825ed26bc9304c2eb256,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM8,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb259
+n03e41f9f651e4af5825ed26bc9304c2eb184,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#graduatestudent
+n03e41f9f651e4af5825ed26bc9304c2eb261,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb199,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb182,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb184
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM32,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb54
+n03e41f9f651e4af5825ed26bc9304c2eb217,http://w3id.org/rml/query,"
+        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
+        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb122,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb124
+n03e41f9f651e4af5825ed26bc9304c2eb225,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM31,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb91
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM13,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb216
+n03e41f9f651e4af5825ed26bc9304c2eb109,http://w3id.org/rml/query,"
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb106,http://w3id.org/rml/reference,graduatestudentname
+n03e41f9f651e4af5825ed26bc9304c2eb289,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb31,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb32,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb33
+n03e41f9f651e4af5825ed26bc9304c2eb75,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb117,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb196,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#publication
+n03e41f9f651e4af5825ed26bc9304c2eb221,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+n03e41f9f651e4af5825ed26bc9304c2eb280,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}
+n03e41f9f651e4af5825ed26bc9304c2eb26,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb28
+n03e41f9f651e4af5825ed26bc9304c2eb51,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM3,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb26
+n03e41f9f651e4af5825ed26bc9304c2eb50,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb52
+n03e41f9f651e4af5825ed26bc9304c2eb104,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb105
+n03e41f9f651e4af5825ed26bc9304c2eb290,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb292
+n03e41f9f651e4af5825ed26bc9304c2eb27,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb107,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb169,http://w3id.org/rml/query,"
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
+        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr WHERE professor.professorType='fullProfessor' "
+n03e41f9f651e4af5825ed26bc9304c2eb120,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb19,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb186,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+n03e41f9f651e4af5825ed26bc9304c2eb32,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb35
+n03e41f9f651e4af5825ed26bc9304c2eb19,http://w3id.org/rml/query,"
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb68,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb71
+n03e41f9f651e4af5825ed26bc9304c2eb13,http://w3id.org/rml/query,"
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb216,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
+n03e41f9f651e4af5825ed26bc9304c2eb237,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb95,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+n03e41f9f651e4af5825ed26bc9304c2eb136,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM33,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb122
+n03e41f9f651e4af5825ed26bc9304c2eb279,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb94,http://w3id.org/rml/reference,undergraduatestudentname
+n03e41f9f651e4af5825ed26bc9304c2eb188,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb190
+n03e41f9f651e4af5825ed26bc9304c2eb223,http://w3id.org/rml/tablename,university
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM35,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb222
+n03e41f9f651e4af5825ed26bc9304c2eb165,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM20,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb242
+n03e41f9f651e4af5825ed26bc9304c2eb83,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM12,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb97
+n03e41f9f651e4af5825ed26bc9304c2eb122,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb123
+n03e41f9f651e4af5825ed26bc9304c2eb233,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor
+n03e41f9f651e4af5825ed26bc9304c2eb89,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb2,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb3
+n03e41f9f651e4af5825ed26bc9304c2eb22,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb9,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM19,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb120
+n03e41f9f651e4af5825ed26bc9304c2eb121,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb25,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb171,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb249,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb38,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb40
+n03e41f9f651e4af5825ed26bc9304c2eb81,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb292,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb285,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb78,http://w3id.org/rml/template,http://www.university{nr}.edu
+n03e41f9f651e4af5825ed26bc9304c2eb131,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone
+n03e41f9f651e4af5825ed26bc9304c2eb151,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb232,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb220,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduatestudent
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM24,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb139
+n03e41f9f651e4af5825ed26bc9304c2eb71,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#name
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM26,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb18
+n03e41f9f651e4af5825ed26bc9304c2eb86,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb89
+n03e41f9f651e4af5825ed26bc9304c2eb139,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb180,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM4,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb168
+n03e41f9f651e4af5825ed26bc9304c2eb139,http://w3id.org/rml/query,"
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb231,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb133,http://w3id.org/rml/query,"
+        SELECT undergraduateCourse.name AS undergraduatecoursename, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, department.subOrganizationOf as universitynr
+        FROM undergraduateCourse INNER JOIN graduateStudent ON undergraduateCourse.teachingAssistant=graduateStudent.nr INNER JOIN department ON graduateStudent.memberOf=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb55,http://w3id.org/rml/query,"
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb115,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb97,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb182,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb183
+n03e41f9f651e4af5825ed26bc9304c2eb224,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb225
+n03e41f9f651e4af5825ed26bc9304c2eb124,http://w3id.org/rml/reference,telephone
+n03e41f9f651e4af5825ed26bc9304c2eb59,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb116,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb119
+n03e41f9f651e4af5825ed26bc9304c2eb230,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb232
+n03e41f9f651e4af5825ed26bc9304c2eb278,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb280
+n03e41f9f651e4af5825ed26bc9304c2eb147,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb96,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+n03e41f9f651e4af5825ed26bc9304c2eb11,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#worksfor
+n03e41f9f651e4af5825ed26bc9304c2eb99,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb170,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb171
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM8,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb264
+n03e41f9f651e4af5825ed26bc9304c2eb112,http://w3id.org/rml/reference,facultyname
+n03e41f9f651e4af5825ed26bc9304c2eb286,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}
+n03e41f9f651e4af5825ed26bc9304c2eb90,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}
+n03e41f9f651e4af5825ed26bc9304c2eb189,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM29,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb288
+n03e41f9f651e4af5825ed26bc9304c2eb188,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb191
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM39,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb132
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM29,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb284
+n03e41f9f651e4af5825ed26bc9304c2eb234,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}
+n03e41f9f651e4af5825ed26bc9304c2eb250,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb271,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb92,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb93
+n03e41f9f651e4af5825ed26bc9304c2eb33,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb101,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb80,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb83
+n03e41f9f651e4af5825ed26bc9304c2eb272,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb274
+n03e41f9f651e4af5825ed26bc9304c2eb74,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb77
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM42,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb181
+n03e41f9f651e4af5825ed26bc9304c2eb221,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb217,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb257,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb140,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb143
+n03e41f9f651e4af5825ed26bc9304c2eb273,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb150,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb142,http://w3id.org/rml/reference,telephone
+n03e41f9f651e4af5825ed26bc9304c2eb275,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM19,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb116
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM18,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb158
+n03e41f9f651e4af5825ed26bc9304c2eb267,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM13,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb212
+n03e41f9f651e4af5825ed26bc9304c2eb61,http://w3id.org/rml/query,"
+        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb137,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM45,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb206
+n03e41f9f651e4af5825ed26bc9304c2eb213,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb6,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM38,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb61
+n03e41f9f651e4af5825ed26bc9304c2eb144,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM22,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb109
+n03e41f9f651e4af5825ed26bc9304c2eb269,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM46,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb266
+n03e41f9f651e4af5825ed26bc9304c2eb80,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb81
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM25,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb7
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM6,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb294
+n03e41f9f651e4af5825ed26bc9304c2eb103,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM46,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb265
+n03e41f9f651e4af5825ed26bc9304c2eb243,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb154,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb5,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+n03e41f9f651e4af5825ed26bc9304c2eb92,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb95
+n03e41f9f651e4af5825ed26bc9304c2eb225,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb92,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb94
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM21,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb187
+n03e41f9f651e4af5825ed26bc9304c2eb119,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#researchinterest
+n03e41f9f651e4af5825ed26bc9304c2eb103,http://w3id.org/rml/query,"
+        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr "
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM39,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb127
+n03e41f9f651e4af5825ed26bc9304c2eb176,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb178
+n03e41f9f651e4af5825ed26bc9304c2eb105,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb199,http://w3id.org/rml/query,"
+        SELECT researchGroup.nr AS researchgroupnr, researchGroup.subOrganizationOf AS departmentnr, department.subOrganizationOf AS universitynr
+        FROM researchGroup INNER JOIN department ON researchGroup.subOrganizationOf=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb106,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb259,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb233,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb14,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb17
+n03e41f9f651e4af5825ed26bc9304c2eb98,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb101
+n03e41f9f651e4af5825ed26bc9304c2eb14,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb15
+n03e41f9f651e4af5825ed26bc9304c2eb278,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb281
+n03e41f9f651e4af5825ed26bc9304c2eb34,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb246,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb1,http://w3id.org/rml/query,"
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
+        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr WHERE professor.professorType='assistantProfessor' "
+n03e41f9f651e4af5825ed26bc9304c2eb11,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb245,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#headof
+n03e41f9f651e4af5825ed26bc9304c2eb7,http://w3id.org/rml/query,"
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb16,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb112,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM48,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb278
+n03e41f9f651e4af5825ed26bc9304c2eb18,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb219,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb65,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailaddress
+n03e41f9f651e4af5825ed26bc9304c2eb79,http://w3id.org/rml/query,"
+        SELECT nr AS departmentnr, subOrganizationOf AS universitynr, name
+        FROM department "
+n03e41f9f651e4af5825ed26bc9304c2eb283,http://w3id.org/rml/query,"
+        SELECT faculty.name AS facultyname, department.nr AS departmentnr, department.subOrganizationOf AS universitynr, graduateCourse.name AS graduatecoursename
+        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr INNER JOIN graduateCourse ON graduateCourse.teacher=faculty.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb167,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+n03e41f9f651e4af5825ed26bc9304c2eb12,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb23,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb104,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb106
+n03e41f9f651e4af5825ed26bc9304c2eb284,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb286
+n03e41f9f651e4af5825ed26bc9304c2eb232,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb123,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb227,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM0,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb78
+n03e41f9f651e4af5825ed26bc9304c2eb255,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM34,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb258
+n03e41f9f651e4af5825ed26bc9304c2eb50,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb51
+n03e41f9f651e4af5825ed26bc9304c2eb130,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb229,http://w3id.org/rml/query,"
+        SELECT department.nr AS departmentnr, department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, faculty.name AS facultyname
+        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr INNER JOIN faculty ON undergraduateStudent.advisor=faculty.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb5,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb226,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb44,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb46
+n03e41f9f651e4af5825ed26bc9304c2eb265,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb98,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb99
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM12,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb102
+n03e41f9f651e4af5825ed26bc9304c2eb277,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb290,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb293
+n03e41f9f651e4af5825ed26bc9304c2eb128,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb130
+n03e41f9f651e4af5825ed26bc9304c2eb238,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb142,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb209,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+n03e41f9f651e4af5825ed26bc9304c2eb218,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb220
+n03e41f9f651e4af5825ed26bc9304c2eb22,http://w3id.org/rml/template,http://www.university{masterdegreefrom}.edu
+n03e41f9f651e4af5825ed26bc9304c2eb33,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb88,http://w3id.org/rml/reference,graduatecoursename
+n03e41f9f651e4af5825ed26bc9304c2eb169,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb38,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb41
+n03e41f9f651e4af5825ed26bc9304c2eb224,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb227
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM48,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb282
+n03e41f9f651e4af5825ed26bc9304c2eb218,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb221
+n03e41f9f651e4af5825ed26bc9304c2eb45,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM11,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb199
+n03e41f9f651e4af5825ed26bc9304c2eb37,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb158,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb161
+n03e41f9f651e4af5825ed26bc9304c2eb116,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb118
+n03e41f9f651e4af5825ed26bc9304c2eb133,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb10,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb152,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb155
+n03e41f9f651e4af5825ed26bc9304c2eb38,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb39
+n03e41f9f651e4af5825ed26bc9304c2eb254,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb255
+n03e41f9f651e4af5825ed26bc9304c2eb100,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb3,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb293,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb248,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb251
+n03e41f9f651e4af5825ed26bc9304c2eb194,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb197
+n03e41f9f651e4af5825ed26bc9304c2eb30,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu
+n03e41f9f651e4af5825ed26bc9304c2eb132,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}
+n03e41f9f651e4af5825ed26bc9304c2eb247,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb74,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb75
+n03e41f9f651e4af5825ed26bc9304c2eb207,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb164,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb166
+n03e41f9f651e4af5825ed26bc9304c2eb214,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduatecourse
+n03e41f9f651e4af5825ed26bc9304c2eb34,http://w3id.org/rml/template,http://www.university{undergraduatedegreefrom}.edu
+n03e41f9f651e4af5825ed26bc9304c2eb56,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb57
+n03e41f9f651e4af5825ed26bc9304c2eb159,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM36,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb230
+n03e41f9f651e4af5825ed26bc9304c2eb247,http://w3id.org/rml/query,"
+        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb41,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduatedegreefrom
+n03e41f9f651e4af5825ed26bc9304c2eb110,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb112
+n03e41f9f651e4af5825ed26bc9304c2eb28,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb154,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}
+n03e41f9f651e4af5825ed26bc9304c2eb153,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb283,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb215,http://w3id.org/rml/constant,http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+n03e41f9f651e4af5825ed26bc9304c2eb21,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb31,http://w3id.org/rml/query,"
+        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
+        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr "
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM7,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb44
+n03e41f9f651e4af5825ed26bc9304c2eb8,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb9
+n03e41f9f651e4af5825ed26bc9304c2eb95,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb236,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb238
+n03e41f9f651e4af5825ed26bc9304c2eb125,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb226,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#university
+n03e41f9f651e4af5825ed26bc9304c2eb271,http://w3id.org/rml/query,"
+        SELECT researchGroup.nr AS researchgroupnr, researchGroup.subOrganizationOf AS departmentnr, department.subOrganizationOf AS universitynr
+        FROM researchGroup INNER JOIN department ON researchGroup.subOrganizationOf=department.nr "
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM10,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb276
+n03e41f9f651e4af5825ed26bc9304c2eb76,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM8,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb260
+n03e41f9f651e4af5825ed26bc9304c2eb39,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb274,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb292,http://w3id.org/rml/reference,publicationtitle
+n03e41f9f651e4af5825ed26bc9304c2eb13,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb158,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb159
+n03e41f9f651e4af5825ed26bc9304c2eb146,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb148
+n03e41f9f651e4af5825ed26bc9304c2eb53,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailaddress
+n03e41f9f651e4af5825ed26bc9304c2eb67,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb127,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM45,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb205
+n03e41f9f651e4af5825ed26bc9304c2eb194,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb195
+n03e41f9f651e4af5825ed26bc9304c2eb8,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb10
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM25,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb12
+n03e41f9f651e4af5825ed26bc9304c2eb24,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb115,http://w3id.org/rml/query,"
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, researchInterest AS researchinterest, headOf AS headof
+        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb266,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb267
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM29,http://w3id.org/rml/logicalSource,n03e41f9f651e4af5825ed26bc9304c2eb283
+n03e41f9f651e4af5825ed26bc9304c2eb157,http://w3id.org/rml/query,"
+        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
+        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr WHERE professor.professorType='associateProfessor' "
+n03e41f9f651e4af5825ed26bc9304c2eb16,http://w3id.org/rml/template,http://www.university{doctoraldegreefrom}.edu
+n03e41f9f651e4af5825ed26bc9304c2eb254,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb256
+n03e41f9f651e4af5825ed26bc9304c2eb77,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM4,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb164
+n03e41f9f651e4af5825ed26bc9304c2eb32,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb34
+n03e41f9f651e4af5825ed26bc9304c2eb56,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb58
+n03e41f9f651e4af5825ed26bc9304c2eb263,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM45,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb210
+n03e41f9f651e4af5825ed26bc9304c2eb195,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb201,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb208,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#teachingassistant
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM12,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb98
+n03e41f9f651e4af5825ed26bc9304c2eb71,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb91,http://w3id.org/rml/query,"
+        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
+        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr "
+n03e41f9f651e4af5825ed26bc9304c2eb160,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#associateprofessor
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM14,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb90
+n03e41f9f651e4af5825ed26bc9304c2eb98,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb100
+n03e41f9f651e4af5825ed26bc9304c2eb109,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb248,http://w3id.org/rml/graphMap,n03e41f9f651e4af5825ed26bc9304c2eb249
+n03e41f9f651e4af5825ed26bc9304c2eb57,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb17,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#doctoraldegreefrom
+n03e41f9f651e4af5825ed26bc9304c2eb145,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM27,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb24
+n03e41f9f651e4af5825ed26bc9304c2eb176,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb179
+n03e41f9f651e4af5825ed26bc9304c2eb193,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb155,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#takescourse
+n03e41f9f651e4af5825ed26bc9304c2eb152,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb154
+n03e41f9f651e4af5825ed26bc9304c2eb260,http://w3id.org/rml/objectMap,n03e41f9f651e4af5825ed26bc9304c2eb262
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM21,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb188
+n03e41f9f651e4af5825ed26bc9304c2eb55,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+n03e41f9f651e4af5825ed26bc9304c2eb177,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM38,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb66
+n03e41f9f651e4af5825ed26bc9304c2eb128,http://w3id.org/rml/predicateMap,n03e41f9f651e4af5825ed26bc9304c2eb131
+n03e41f9f651e4af5825ed26bc9304c2eb287,http://w3id.org/rml/constant,http://swat.cse.lehigh.edu/onto/univ-bench.owl#teacherof
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM31,http://w3id.org/rml/subjectMap,n03e41f9f651e4af5825ed26bc9304c2eb96
+n03e41f9f651e4af5825ed26bc9304c2eb118,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb135,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb209,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb119,http://w3id.org/rml/termType,http://w3id.org/rml/IRI
+n03e41f9f651e4af5825ed26bc9304c2eb129,http://w3id.org/rml/constant,http://w3id.org/rml/defaultgraph
+n03e41f9f651e4af5825ed26bc9304c2eb85,http://w3id.org/rml/referenceFormulation,http://w3id.org/rml/SQL2008
+file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM15,http://w3id.org/rml/predicateObjectMap,n03e41f9f651e4af5825ed26bc9304c2eb176
+n03e41f9f651e4af5825ed26bc9304c2eb238,http://w3id.org/rml/template,http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}
+n03e41f9f651e4af5825ed26bc9304c2eb178,http://w3id.org/rml/termType,http://w3id.org/rml/IRI

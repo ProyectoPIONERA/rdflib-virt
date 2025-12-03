@@ -1,7 +1,7 @@
 import pandas as pd
 from morph_kgc.config import Config
 from morph_kgc.mapping.mapping_parser import retrieve_mappings
-from matcher_rf import extract_bound_pattern
+#from matcher_rf import extract_bound_pattern
 from rdflib import Graph
 import re
 
@@ -12,7 +12,7 @@ config.validate_configuration_section()
 rml_df, _, _ = retrieve_mappings(config)
 rml_df.to_csv("output_rml.csv", index=False)
 
-print("✔ Archivo generado: output_rml.csv")
+print("dataframe generated: output_rml.csv (step 1)")
 
 def rml_df_to_ttl(csv_path, ttl_path):
     """
@@ -80,7 +80,7 @@ def rml_df_to_ttl(csv_path, ttl_path):
             subj_val = row.get("subject_map_value")
             f.write(f'    rml:subjectMap [ rml:{subj_type} "{subj_val}" ] .\n\n')
 
-    print(f"✅ Mapping TTL limpio generado: {ttl_path}")
+    print(f".ttl mapping genereated in: {ttl_path} (step 1-2)")
 
 rml_df_to_ttl("output_rml.csv", "mapping_generated.ttl")
 
@@ -91,16 +91,15 @@ output_file = "output.ttl"
 # 1. Crear un grafo
 graph = Graph()
 
-# 2. Cargar el archivo TTL
-print(f"📥 Cargando archivo RDF desde: {input_file}")
+# 1-2. Cargar el archivo TTL
 graph.parse(input_file, format="turtle")
 
-print(f"✔ Archivo cargado. Número de triples: {len(graph)}")
+print(f"rdf loaded. Triples number: {len(graph)} (step 2)")
 
-# 3. Serializarlo (guardar)
+# 2-3. Serializarlo (guardar)
 graph.serialize(output_file, format="turtle")
 
-print(f"📤 Archivo exportado como Turtle en: {output_file}")
+print(f"graph serialized in: {output_file} (step 2-3)")
 
 # Convertir el grafo en una lista de triples
 triples_data = [(str(s), str(p), str(o)) for s, p, o in graph]
@@ -110,11 +109,10 @@ df_triples = pd.DataFrame(triples_data, columns=["S", "P", "O"])
 
 # Guardar opcionalmente como CSV
 df_triples.to_csv("triples_output.csv", index=False)
-print("✔ Archivo guardado: triples_output.csv")
+print("saved csv file in: triples_output.csv (step 3)")
 
 
 """
-
 #Opcion 1: filtrar usando una función, sacar del matcher los s,p,o y ponerlos en la llamada a la función
 def filter_by_pattern(df_triples, s=None, p=None, o=None):
     filtered = df_triples.copy()
@@ -155,3 +153,29 @@ print("\n✔ Tripletas filtradas guardadas en: filtered_triples.csv\n")
 print(filtered_df)
 
 """
+
+#opcion2
+def extract_bounded_terms(pattern):
+    return re.split(r"\{[^}]+\}", pattern)
+
+
+def filter_df_by_bounded_terms_any_position(df, pattern):
+    bounded = extract_bounded_terms(pattern)
+    bounded = [b for b in bounded if b.strip()]  # quitar strings vacíos
+
+    def row_matches(row):
+        values = [str(row['S']), str(row['P']), str(row['O'])]
+
+        return any(all(b in v for b in bounded) for v in values)
+
+    mask = df.apply(row_matches, axis=1)
+    return df[mask]
+
+df = pd.read_csv("triples_output.csv")
+
+#pattern = "file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM35"
+pattern = input("Introduce the pattern to find (S, P u O): ")
+filtered = filter_df_by_bounded_terms_any_position(df, pattern)
+
+filtered.to_csv("filtered_templates.csv", index=False)
+print("filtered triples in: filtered_templates.csv (step 5)")
