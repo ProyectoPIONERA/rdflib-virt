@@ -173,7 +173,9 @@ def filter_df_by_bounded_terms_any_position(df, pattern):
 
 df = pd.read_csv("triples_output.csv")
 
+#opcion input en codigo
 #pattern = "file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM35"
+#opción input manual
 pattern = input("Introduce the pattern to find (S, P u O): ")
 filtered = filter_df_by_bounded_terms_any_position(df, pattern)
 
