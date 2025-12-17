@@ -15,8 +15,8 @@ config = Config()
 config.read("config.ini")
 config.complete_configuration_with_defaults()
 config.validate_configuration_section()
-rml_df, _, _ = retrieve_mappings(config)
-rml_df.to_csv("output_rml.csv", index=False)
+rml_df, _ = retrieve_mappings(config)
+rml_df.to_csv("output_rml.csv", encoding='utf-8-sig', index=False)
 
 print("dataframe generated: output_rml.csv (step 1)")
 
@@ -56,7 +56,7 @@ def rml_df_to_ttl(csv_path, ttl_path):
 
         # Subject Map ==================
         subj_bnode = rdflib.BNode()
-        subj_type = (row["subject_map_type"]).split("/")[-1].lower()
+        subj_type = row["subject_map_type"].split("/")[-1].lower()
         subj_value = row["subject_map_value"]
         subj_termtype = row["subject_termtype"].split("/")[-1]
 
@@ -70,8 +70,8 @@ def rml_df_to_ttl(csv_path, ttl_path):
 
         # Predicate Map ============================
         pred_bnode = rdflib.BNode()
-        pred_type = (row["predicate_map_type"]).split("/")[-1].lower()
-        pred_val = (row["predicate_map_value"]).split("#")[-1].lower()
+        pred_type = row["predicate_map_type"].split("/")[-1].lower()
+        pred_val = row["predicate_map_value"].split("#")[-1].lower()
 
         g.add((pom_bnode, RML.predicateMap, pred_bnode))
         g.add((pred_bnode, RML[pred_type], UB[pred_val]))
@@ -80,17 +80,17 @@ def rml_df_to_ttl(csv_path, ttl_path):
 
         # Object Map ======================================
         obj_bnode = rdflib.BNode()
-        obj_type = (row["object_map_type"]).split("/")[-1].lower()
+        obj_type = row["object_map_type"].split("/")[-1].lower()
         obj_value = row["object_map_value"]
-        obj_value_short = (row["object_map_value"]).split("#")[-1].lower()
-        obj_termtype = (row["object_termtype"]).split("/")[-1]
+        obj_value_short = row["object_map_value"].split("#")[-1].lower()
+        obj_termtype = row["object_termtype"].split("/")[-1]
 
         g.add((pom_bnode, RML.objectMap, obj_bnode))
 
 
         if "constant" in obj_type:
             g.add((obj_bnode, RML[obj_type], UB[obj_value_short]))
-        elif "reference" or "template" in obj_type:
+        elif obj_type in {"reference", "template"}:
             g.add((obj_bnode, RML[obj_type], Literal(obj_value)))
 
 
@@ -102,6 +102,7 @@ def rml_df_to_ttl(csv_path, ttl_path):
             gm_bnode = rdflib.BNode()
             gm_type = row["graph_map_type"].split("/")[-1].lower()
             gm_value = row["graph_map_value"].split("/")[-1]
+            
             g.add((pom_bnode, RML.graphMap, gm_bnode))
             g.add((gm_bnode, RML[gm_type], RML[gm_value]))
             g.add((gm_bnode, RML.termType, RML.IRI))
@@ -115,53 +116,40 @@ print(f"Mapping RML generado en: {"mapping_generated.ttl"}")
 with tempfile.NamedTemporaryFile(mode="w", suffix=".ini", delete=False) as tmp:
     temp_config_path = tmp.name
     config["DataSource1"]["mappings"] = "mapping_generated.ttl"
-
-    # Guardar el Config modificado en este archivo temporal
     config.write(tmp)
 
 print(f"Config temporal creado: {temp_config_path}")
 # 2-3. materializarlo (hacerlo grafo)
 graph = morph_kgc.materialize(temp_config_path)
 
-print(f"rdf loaded. Triples number: {len(graph)} (step 2)")
-
 print(f"graph materialized in: {graph} (step 2-3)")
 
-# Convertir el grafo en una lista de triples
+graph.serialize("triples_output.ttl", format="turtle")
+print("Grafo RDF completo serializado en: triples_output.ttl")
+
 triples_data = [(str(s), str(p), str(o)) for s, p, o in graph]
-
-# Crear el DataFrame
 df_triples = pd.DataFrame(triples_data, columns=["S", "P", "O"])
-
-# Guardar opcionalmente como CSV
-df_triples.to_csv("triples_output.csv", index=False)
-print("saved csv file in: triples_output.csv (step 3)")
+df_triples.to_csv("triples_output.csv", escapechar=None, index=False)
+print("Triples guardados en CSV: triples_output.csv (step 3)")
 
 
 #opcion2
 def extract_bounded_terms(pattern):
-    return re.split(r"\{[^}]+\}", pattern)
-
+    return [b for b in re.split(r"\{[^}]+\}", pattern) if b.strip()]
 
 def filter_df_by_bounded_terms_any_position(df, pattern):
     bounded = extract_bounded_terms(pattern)
-    bounded = [b for b in bounded if b.strip()]  # quitar strings vacíos
-
     def row_matches(row):
         values = [str(row['S']), str(row['P']), str(row['O'])]
-
         return any(all(b in v for b in bounded) for v in values)
-
     mask = df.apply(row_matches, axis=1)
     return df[mask]
 
 df = pd.read_csv("triples_output.csv")
-
 #opcion input en codigo
 #pattern = "file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM35"
 #opción input manual
 pattern = input("Introduce the pattern to find (S, P u O): ")
 filtered = filter_df_by_bounded_terms_any_position(df, pattern)
-
 filtered.to_csv("filtered_templates.csv", index=False)
 print("filtered triples in: filtered_templates.csv (step 5)")
