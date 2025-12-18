@@ -1,17 +1,6 @@
 @prefix rml: <http://w3id.org/rml/> .
 @prefix ub: <http://swat.cse.lehigh.edu/onto/univ-bench.owl#> .
 
-<#TM0> a rml:TriplesMap ;
-    rml:logicalSource [ rml:tablename "university" ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "name" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:name ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.university{nr}.edu" ;
-            rml:termType rml:IRI ] .
-
 <#TM1> a rml:TriplesMap ;
     rml:logicalSource [ rml:tablename "university" ] ;
     rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
@@ -21,20 +10,6 @@
             rml:predicateMap [ rml:constant ub:type ;
                     rml:termType rml:IRI ] ] ;
     rml:subjectMap [ rml:template "http://www.university{nr}.edu" ;
-            rml:termType rml:IRI ] .
-
-<#TM10> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT researchGroup.nr AS researchgroupnr, researchGroup.subOrganizationOf AS departmentnr, department.subOrganizationOf AS universitynr
-        FROM researchGroup INNER JOIN department ON researchGroup.subOrganizationOf=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:suborganizationof ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/researchGroup{researchgroupnr}.edu" ;
             rml:termType rml:IRI ] .
 
 <#TM11> a rml:TriplesMap ;
@@ -51,20 +26,6 @@
     rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/researchGroup{researchgroupnr}.edu" ;
             rml:termType rml:IRI ] .
 
-<#TM12> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT subOrganizationOf AS universitynr, undergraduateCourse.name AS undergraduatecoursename, department.nr AS departmentnr
-        FROM undergraduateCourse INNER JOIN faculty ON undergraduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "undergraduatecoursename" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:name ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}" ;
-            rml:termType rml:IRI ] .
-
 <#TM13> a rml:TriplesMap ;
     rml:logicalSource [ rml:query """
         SELECT subOrganizationOf AS universitynr, undergraduateCourse.name AS undergraduatecoursename, department.nr AS departmentnr
@@ -77,20 +38,6 @@
             rml:predicateMap [ rml:constant ub:type ;
                     rml:termType rml:IRI ] ] ;
     rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}" ;
-            rml:termType rml:IRI ] .
-
-<#TM14> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT subOrganizationOf AS universitynr, graduateCourse.name AS graduatecoursename, department.nr AS departmentnr
-        FROM graduateCourse INNER JOIN faculty ON graduateCourse.teacher=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "graduatecoursename" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:name ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}" ;
             rml:termType rml:IRI ] .
 
 <#TM15> a rml:TriplesMap ;
@@ -149,48 +96,6 @@
     rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
             rml:termType rml:IRI ] .
 
-<#TM19> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, researchInterest AS researchinterest, headOf AS headof
-        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "researchinterest" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:researchinterest ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM2> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT nr AS departmentnr, subOrganizationOf AS universitynr, name
-        FROM department """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "name" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:name ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu" ;
-            rml:termType rml:IRI ] .
-
-<#TM20> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, researchInterest AS researchinterest, headOf AS headof
-        FROM professor INNER JOIN faculty ON professor.nr=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.department{headof}.university{universitynr}.edu" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:headof ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
-            rml:termType rml:IRI ] .
-
 <#TM21> a rml:TriplesMap ;
     rml:logicalSource [ rml:query """
         SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr
@@ -203,202 +108,6 @@
             rml:predicateMap [ rml:constant ub:type ;
                     rml:termType rml:IRI ] ] ;
     rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM22> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "facultyname" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:name ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM23> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "emailaddress" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:emailaddress ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM24> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "telephone" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:telephone ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM25> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:worksfor ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM26> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.university{doctoraldegreefrom}.edu" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:doctoraldegreefrom ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM27> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.university{masterdegreefrom}.edu" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:masterdegreefrom ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM28> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.nr AS departmentnr, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom, masterDegreeFrom AS masterdegreefrom, doctoralDegreeFrom AS doctoraldegreefrom
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.university{undergraduatedegreefrom}.edu" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:undergraduatedegreefrom ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM29> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT faculty.name AS facultyname, department.nr AS departmentnr, department.subOrganizationOf AS universitynr, graduateCourse.name AS graduatecoursename
-        FROM faculty INNER JOIN department ON faculty.worksFor=department.nr INNER JOIN graduateCourse ON graduateCourse.teacher=faculty.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:teacherof ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM3> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT nr AS departmentnr, subOrganizationOf AS universitynr, name
-        FROM department """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.university{universitynr}.edu" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:suborganizationof ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu" ;
-            rml:termType rml:IRI ] .
-
-<#TM30> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT faculty.name AS facultyname, department.nr AS departmentnr, department.subOrganizationOf AS universitynr, undergraduateCourse.name AS undergraduatecoursename
-        FROM faculty INNER JOIN department ON worksFor=department.nr INNER JOIN undergraduateCourse ON undergraduateCourse.teacher=faculty.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:teacherof ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM31> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
-        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "undergraduatestudentname" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:name ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM32> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
-        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "emailaddress" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:emailaddress ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM33> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
-        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "telephone" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:telephone ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM34> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress
-        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:memberof ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}" ;
             rml:termType rml:IRI ] .
 
 <#TM35> a rml:TriplesMap ;
@@ -415,62 +124,6 @@
     rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}" ;
             rml:termType rml:IRI ] .
 
-<#TM36> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.nr AS departmentnr, department.subOrganizationOf AS universitynr, undergraduateStudent.name AS undergraduatestudentname, faculty.name AS facultyname
-        FROM undergraduateStudent INNER JOIN department ON undergraduateStudent.memberOf=department.nr INNER JOIN faculty ON undergraduateStudent.advisor=faculty.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:advisor ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM37> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
-        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "graduatestudentname" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:name ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM38> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
-        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "emailaddress" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:emailaddress ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM39> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
-        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "telephone" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:telephone ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ;
-            rml:termType rml:IRI ] .
-
 <#TM4> a rml:TriplesMap ;
     rml:logicalSource [ rml:query """
         SELECT nr AS departmentnr, subOrganizationOf AS universitynr, name
@@ -483,34 +136,6 @@
             rml:predicateMap [ rml:constant ub:type ;
                     rml:termType rml:IRI ] ] ;
     rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu" ;
-            rml:termType rml:IRI ] .
-
-<#TM40> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
-        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:memberof ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM41> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, telephone, emailAddress AS emailaddress, undergraduateDegreeFrom AS undergraduatedegreefrom
-        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.university{undergraduatedegreefrom}.edu" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:undergraduatedegreefrom ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ;
             rml:termType rml:IRI ] .
 
 <#TM42> a rml:TriplesMap ;
@@ -527,34 +152,6 @@
     rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ;
             rml:termType rml:IRI ] .
 
-<#TM43> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT department.nr AS departmentnr, department.subOrganizationOf AS universitynr, graduateStudent.name AS graduatestudentname, faculty.name AS facultyname
-        FROM graduateStudent INNER JOIN department ON graduateStudent.memberOf=department.nr INNER JOIN faculty ON graduateStudent.advisor=faculty.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:advisor ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM44> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT undergraduateCourse.name AS undergraduatecoursename, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, department.subOrganizationOf as universitynr
-        FROM undergraduateCourse INNER JOIN graduateStudent ON undergraduateCourse.teachingAssistant=graduateStudent.nr INNER JOIN department ON graduateStudent.memberOf=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:teachingassistantof ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ;
-            rml:termType rml:IRI ] .
-
 <#TM45> a rml:TriplesMap ;
     rml:logicalSource [ rml:query """
         SELECT undergraduateCourse.name AS undergraduatecoursename, graduateStudent.name AS graduatestudentname, department.nr AS departmentnr, department.subOrganizationOf as universitynr
@@ -567,104 +164,6 @@
             rml:predicateMap [ rml:constant ub:type ;
                     rml:termType rml:IRI ] ] ;
     rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM46> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT publication.name AS publicationname, graduateStudent.name AS graduatestudentname, faculty.name AS facultyname, department.nr AS departmentnr, department.subOrganizationOf AS universitynr
-        FROM coAuthorOfPublication INNER JOIN publication ON coAuthorOfPublication.publicationID=publication.nr INNER JOIN faculty ON publication.mainAuthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr INNER JOIN graduateStudent ON coAuthorOfPublication.graduateStudentID=graduateStudent.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:publicationauthor ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM47> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT undergraduateStudent.name AS undergraduatestudentname, undergraduateCourse.name AS undergraduatecoursename, department.nr AS departmentnr, department.subOrganizationOf AS universitynr
-        FROM undergraduateStudentTakeCourse INNER JOIN undergraduateStudent ON undergraduateStudentTakeCourse.undergraduateStudentID=undergraduateStudent.nr INNER JOIN department ON undergraduateStudent.memberOf=department.nr INNER JOIN undergraduateCourse ON undergraduateStudentTakeCourse.undergraduateCourseID=undergraduateCourse.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatecoursename}" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:takescourse ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{undergraduatestudentname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM48> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT graduateStudent.name AS graduatestudentname, graduateCourse.name AS graduatecoursename, department.nr AS departmentnr, department.subOrganizationOf AS universitynr
-        FROM graduateStudentTakeCourse INNER JOIN graduateStudent ON graduateStudentTakeCourse.graduateStudentID=graduateStudent.nr INNER JOIN department ON graduateStudent.memberOf=department.nr INNER JOIN graduateCourse ON graduateStudentTakeCourse.graduateCourseID=graduateCourse.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatecoursename}" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:takescourse ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{graduatestudentname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM5> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
-        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "publicationname" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:name ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM6> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
-        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "publicationtitle" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:title ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM7> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
-        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:reference "publicationabstract" ;
-                    rml:termType rml:Literal ] ;
-            rml:predicateMap [ rml:constant ub:abstract ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}" ;
-            rml:termType rml:IRI ] .
-
-<#TM8> a rml:TriplesMap ;
-    rml:logicalSource [ rml:query """
-        SELECT publication.name AS publicationname, faculty.name AS facultyname, department.subOrganizationOf AS universitynr, department.nr AS departmentnr, publication.title AS publicationtitle, publication.abstract AS publicationabstract
-        FROM publication INNER JOIN faculty ON publication.mainauthor=faculty.nr INNER JOIN department ON faculty.worksFor=department.nr """ ;
-            rml:referenceFormulation rml:SQL2008 ] ;
-    rml:predicateObjectMap [ rml:graphMap [ rml:constant rml:defaultGraph ;
-                    rml:termType rml:IRI ] ;
-            rml:objectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}" ;
-                    rml:termType rml:IRI ] ;
-            rml:predicateMap [ rml:constant ub:publicationauthor ;
-                    rml:termType rml:IRI ] ] ;
-    rml:subjectMap [ rml:template "http://www.department{departmentnr}.university{universitynr}.edu/{facultyname}/{publicationname}" ;
             rml:termType rml:IRI ] .
 
 <#TM9> a rml:TriplesMap ;

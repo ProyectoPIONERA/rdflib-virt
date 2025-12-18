@@ -16,9 +16,19 @@ config.read("config.ini")
 config.complete_configuration_with_defaults()
 config.validate_configuration_section()
 rml_df, _ = retrieve_mappings(config)
-rml_df.to_csv("output_rml.csv", encoding='utf-8-sig', index=False)
+
+def filter_mapping_by_predicate(rml_df, predicate_iri):
+    return rml_df[
+        rml_df["predicate_map_value"] == predicate_iri
+    ]
+
+predicate_iri = input("Introduce the predicate to find (?x predicate ?y): ")
+
 
 print("dataframe generated: output_rml.csv (step 1)")
+rml_df = filter_mapping_by_predicate(rml_df, predicate_iri)
+rml_df.to_csv("output_rml.csv", encoding='utf-8-sig', index=False)
+
 
 def rml_df_to_ttl(csv_path, ttl_path):
 
