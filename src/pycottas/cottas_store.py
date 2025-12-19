@@ -5,10 +5,10 @@ __license__ = "Apache-2.0"
 __maintainer__ = "Julián Arenas-Guerrero"
 __email__ = "julian.arenas.guerrero@upm.es"
 
-
+import morph_kgc
+import tempfile
 import duckdb
 from typing import Iterable
-from rdflib import Graph
 import rdflib
 import pandas as pd
 from rdflib.store import Store
@@ -16,14 +16,20 @@ from rdflib.util import from_n3
 from morph_kgc.mapping.mapping_parser import retrieve_mappings
 from morph_kgc.mapping.mapping_parser import MappingParser
 from morph_kgc.__init__ import materialize
+from morph_kgc.config import Config
 from pycottas.utils import verify_cottas_file
 from pycottas.types_2 import Triple
 from pycottas.tp_translator import translate_triple_pattern_tuple
 from pycottas.rml_ttl import rml_df_to_ttl
 import re
+from pycottas.rml_ttl2 import filter_mapping_by_predicate
+from pycottas.rml_ttl2 import rml_df_to_ttl 
+from pycottas.rml_ttl2 import filter_df_by_bounded_terms_any_position
 
-
-config_path = "config.ini"
+config = Config()
+config.read("config.ini")
+config.complete_configuration_with_defaults()
+config.validate_configuration_section()
 
 class COTTASStore(Store):
     """
@@ -38,6 +44,8 @@ class COTTASStore(Store):
             raise Exception(f"{path} is not a valid COTTAS file.")
 
         self.config_path = path
+
+    pattern = input("Input the predicate of the pattern (?x P ?y), ej: rdf:type, ub:name, type: ")
 
     def triples(self, pattern, context) -> Iterable[Triple]:
         """Search for a triple pattern in the mappings and materialize the triples matching the mappings.
@@ -54,40 +62,43 @@ class COTTASStore(Store):
 
         Returns: An iterator that produces RDF triples matching the input triple pattern.
         """
-        #1. Retrieve mappings to get rml_df filtered
-        rml_df, _, _ = retrieve_mappings(self.config)
+        # 1. Obtener mapping
+        rml_df, _ = retrieve_mappings(config)
+        config.complete_configuration_with_defaults()
+        config.validate_configuration_section()
 
-        #2. transform rml_df filtered to a .ttl and materialize to get a graph
-        rml_df_ttl = rml_df_to_ttl(rml_df, "rml_turtled.ttl")
-        rdf_graph = materialize(rml_df_ttl, config=self.config)
+        # 2. Filtrar TriplesMaps (virtualización real)
+        rml_df_filtered = filter_mapping_by_predicate(rml_df, pattern)
 
-        #3. convert graph into dataframe
-        triples_df = [(str(s), str(p), str(o)) for s, p, o in rdf_graph]
-        df = pd.DataFrame(triples_df, columns=["S", "P", "O"])
+        # 3. Generar mapping TTL (único archivo necesario)
+        with tempfile.NamedTemporaryFile(suffix=".ttl", delete=False) as ttl_tmp:
+            mapping_path = ttl_tmp.name
 
-        #4. Filter dataframe with pattern (bounded terms)
-        def filtered_triples(df: pd.DataFrame, pattern: str) -> pd.DataFrame:
+        rml_df_to_ttl(rml_df_filtered, mapping_path)
 
-            def is_bound(term):
-                # Variable if has {, }, $, ?
-                return not re.search(r'[\{\}\$\?]', term)
-            
-            mask = df.apply(lambda row: any(
-                is_bound(row[col]) and re.search(pattern, row[col])
-                for col in ['S','P','O']
-            ), axis=1)
+        # 4. Config temporal
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".ini", delete=False) as ini_tmp:
+            config["DataSource1"]["mappings"] = mapping_path
+            config.write(ini_tmp)
+            temp_config_path = ini_tmp.name
 
-            return df[mask].reset_index(drop=True)
-        
-        filtered_df = filtered_triples(df)
+        # 5. Materializar (grafo en memoria)
+        graph = morph_kgc.materialize(temp_config_path)
 
-        # 5. Yield triples filtered
-        for _, row in filtered_df.iterrows():
-            yield (
-                from_n3(row["S"]),
-                from_n3(row["P"]),
-                from_n3(row["O"])
-            ), None
+        # 6. Convertir a DataFrame (en memoria)
+        df_triples = pd.DataFrame(
+            [(str(s), str(p), str(o)) for s, p, o in graph],
+            columns=["S", "P", "O"]
+        )
+
+        # 7. Filtrado final
+        pattern = input("Introduce el pattern final (S, P u O): ")
+        filtered = filter_df_by_bounded_terms_any_position(df_triples, pattern)
+
+        # 8. (Opcional) guardar resultado
+        filtered.to_csv("filtered_templates.csv", index=False)
+
+
 
     def create(self, configuration):
         raise TypeError('The virt store is read only!')

@@ -10,13 +10,6 @@ from rdflib import Graph
 import re
 import tempfile
 
-
-config = Config()
-config.read("config.ini")
-config.complete_configuration_with_defaults()
-config.validate_configuration_section()
-rml_df, _ = retrieve_mappings(config)
-
 def normalize_predicate_input(p):
     p = p.strip().lower()
     if ":" in p:
@@ -41,22 +34,10 @@ def filter_mapping_by_predicate(rml_df, predicate_input):
     mask = rml_df["predicate_map_value"].apply(matches_predicate)
     return rml_df[mask]
 
-val = rml_df["predicate_map_value"]
-print(val.head())
-
-predicate_iri = input(
-    "Introduce el predicado (?x P ?y), ej: rdf:type, ub:name, type: "
-)
-
-rml_df_filtered = filter_mapping_by_predicate(rml_df, predicate_iri)
-print("dataframe generated: output_rml.csv (step 1)")
-rml_df.to_csv("output_rml_nf.csv", encoding='utf-8-sig', index=False)
-rml_df_filtered.to_csv("output_rml.csv", encoding='utf-8-sig', index=False)
+pattern = input("Input the predicate of the pattern (?x P ?y), ej: rdf:type, ub:name, type: ")
 
 
-def rml_df_to_ttl(csv_path, ttl_path):
-
-    df = pd.read_csv(csv_path)
+def rml_df_to_ttl(df, ttl_path):
 
     RML = Namespace("http://w3id.org/rml/")
     RR = Namespace("http://www.w3.org/ns/r2rml#")
@@ -141,33 +122,7 @@ def rml_df_to_ttl(csv_path, ttl_path):
             g.add((gm_bnode, RML[gm_type], RML[gm_value]))
             g.add((gm_bnode, RML.termType, RML.IRI))
     g.serialize(destination=ttl_path, format="turtle")
-    return g
 
-rml_df_to_ttl("output_rml.csv", "mapping_generated.ttl")
-print(f"Mapping RML generado en: {"mapping_generated.ttl"}")
-
-# Crear un config.ini temporal basado en config original pero con mappings modificado
-with tempfile.NamedTemporaryFile(mode="w", suffix=".ini", delete=False) as tmp:
-    temp_config_path = tmp.name
-    config["DataSource1"]["mappings"] = "mapping_generated.ttl"
-    config.write(tmp)
-
-print(f"Config temporal creado: {temp_config_path}")
-# 2-3. materializarlo (hacerlo grafo)
-graph = morph_kgc.materialize(temp_config_path)
-
-print(f"graph materialized in: {graph} (step 2-3)")
-
-graph.serialize("triples_output.ttl", format="turtle")
-print("Grafo RDF completo serializado en: triples_output.ttl")
-
-triples_data = [(str(s), str(p), str(o)) for s, p, o in graph]
-df_triples = pd.DataFrame(triples_data, columns=["S", "P", "O"])
-df_triples.to_csv("triples_output.csv", escapechar=None, index=False)
-print("Triples guardados en CSV: triples_output.csv (step 3)")
-
-
-#opcion2
 def extract_bounded_terms(pattern):
     return [b for b in re.split(r"\{[^}]+\}", pattern) if b.strip()]
 
@@ -179,11 +134,44 @@ def filter_df_by_bounded_terms_any_position(df, pattern):
     mask = df.apply(row_matches, axis=1)
     return df[mask]
 
-df = pd.read_csv("triples_output.csv")
-#opcion input en codigo
-#pattern = "file:///home/jorge/proyectos/git/rdflib-virt/src/pycottas/mapping_generated.ttl#TM35"
-#opción input manual
-pattern = input("Introduce the pattern to find (S, P u O): ")
-filtered = filter_df_by_bounded_terms_any_position(df, pattern)
+config = Config()
+config.read("config.ini")
+config.complete_configuration_with_defaults()
+config.validate_configuration_section()
+
+ # 1. Obtener mapping
+rml_df, _ = retrieve_mappings(config)
+config.complete_configuration_with_defaults()
+config.validate_configuration_section()
+
+# 2. Filtrar TriplesMaps (virtualización real)
+rml_df_filtered = filter_mapping_by_predicate(rml_df, pattern)
+
+# 3. Generar mapping TTL (único archivo necesario)
+with tempfile.NamedTemporaryFile(suffix=".ttl", delete=False) as ttl_tmp:
+    mapping_path = ttl_tmp.name
+
+rml_df_to_ttl(rml_df_filtered, mapping_path)
+
+    # 4. Config temporal
+with tempfile.NamedTemporaryFile(mode="w", suffix=".ini", delete=False) as ini_tmp:
+    config["DataSource1"]["mappings"] = mapping_path
+    config.write(ini_tmp)
+    temp_config_path = ini_tmp.name
+
+# 5. Materializar (grafo en memoria)
+graph = morph_kgc.materialize(temp_config_path)
+
+# 6. Convertir a DataFrame (en memoria)
+df_triples = pd.DataFrame(
+    [(str(s), str(p), str(o)) for s, p, o in graph],
+    columns=["S", "P", "O"]
+    )
+
+# 7. Filtrado final
+pattern = input("Introduce el pattern final (S, P u O): ")
+filtered = filter_df_by_bounded_terms_any_position(df_triples, pattern)
+
+# 8. (Opcional) guardar resultado
 filtered.to_csv("filtered_templates.csv", index=False)
-print("filtered triples in: filtered_templates.csv (step 5)")
+
