@@ -17,17 +17,41 @@ config.complete_configuration_with_defaults()
 config.validate_configuration_section()
 rml_df, _ = retrieve_mappings(config)
 
-def filter_mapping_by_predicate(rml_df, predicate_iri):
-    return rml_df[
-        rml_df["predicate_map_value"] == predicate_iri
-    ]
+def normalize_predicate_input(p):
+    p = p.strip().lower()
+    if ":" in p:
+        return p.split(":", 1)[1]  # rdf:type → type
+    if "#" in p:
+        return p.split("#")[-1]    # IRI completa
+    return p                      # type
 
-predicate_iri = input("Introduce the predicate to find (?x predicate ?y): ")
+def filter_mapping_by_predicate(rml_df, predicate_input):
+    pred_norm = normalize_predicate_input(predicate_input)
 
+    def matches_predicate(iri):
+        if not isinstance(iri, str):
+            return False
+        iri = iri.lower()
+        return (
+            iri.endswith(f"#{pred_norm}") or
+            iri.endswith(f"/{pred_norm}") or
+            pred_norm in iri
+        )
 
+    mask = rml_df["predicate_map_value"].apply(matches_predicate)
+    return rml_df[mask]
+
+val = rml_df["predicate_map_value"]
+print(val.head())
+
+predicate_iri = input(
+    "Introduce el predicado (?x P ?y), ej: rdf:type, ub:name, type: "
+)
+
+rml_df_filtered = filter_mapping_by_predicate(rml_df, predicate_iri)
 print("dataframe generated: output_rml.csv (step 1)")
-rml_df = filter_mapping_by_predicate(rml_df, predicate_iri)
-rml_df.to_csv("output_rml.csv", encoding='utf-8-sig', index=False)
+rml_df.to_csv("output_rml_nf.csv", encoding='utf-8-sig', index=False)
+rml_df_filtered.to_csv("output_rml.csv", encoding='utf-8-sig', index=False)
 
 
 def rml_df_to_ttl(csv_path, ttl_path):
