@@ -53,39 +53,39 @@ class COTTASStore(Store):
 
         Returns: An iterator that produces RDF triples matching the input triple pattern.
         """
-        # 1. Obtener mapping
+        # 1. Get mapping
         rml_df, _ = retrieve_mappings(config)
         config.complete_configuration_with_defaults()
         config.validate_configuration_section()
 
-        # 2. Filtrar TriplesMaps (virtualización real)
+        # 2. Filter TriplesMaps
         rml_df_filtered = filter_mapping_by_predicate(rml_df, pattern)
 
-        # 3. Generar mapping TTL (único archivo necesario)
+        # 3. Generate mapping TTL
         with tempfile.NamedTemporaryFile(suffix=".ttl", delete=False) as ttl_tmp:
             mapping_path = ttl_tmp.name
 
         rml_df_to_ttl(rml_df_filtered, mapping_path)
 
-        # 4. Config temporal
+        # 4. Temporal configuration 
         with tempfile.NamedTemporaryFile(mode="w", suffix=".ini", delete=False) as ini_tmp:
             config["DataSource1"]["mappings"] = mapping_path
             config.write(ini_tmp)
             temp_config_path = ini_tmp.name
 
-        # 5. Materializar (grafo en memoria)
+        # 5. Materialize
         graph = morph_kgc.materialize(temp_config_path)
 
-        # 6. Convertir a DataFrame (en memoria)
+        # 6. Convert into a DataFrame 
         df_triples = pd.DataFrame(
             [(str(s), str(p), str(o)) for s, p, o in graph],
             columns=["S", "P", "O"]
         )
 
-        # 7. Filtrado final
+        # 7. Final filter 
         filtered = filter_df_by_bounded_terms_any_position(df_triples, final_pattern)
 
-        # 8. (Opcional) guardar resultado
+        # 8. Save result
         filtered.to_csv("filtered_templates.csv", index=False)
 
     def create(self, configuration):
