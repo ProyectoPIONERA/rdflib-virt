@@ -45,17 +45,8 @@ class COTTASStore(Store):
 
         self.config_path = path
 
-    pattern = input("Input the predicate of the pattern (?x P ?y), ej: rdf:type, ub:name, type: ")
-
-    def triples(self, pattern, context) -> Iterable[Triple]:
+    def triples(self, pattern, final_pattern, context=None):
         """Search for a triple pattern in the mappings and materialize the triples matching the mappings.
-
-        1. Matchear el *pattern* con rml_df -> obtiene un rml_df con menos reglas
-        2. Ejecutar morph_kgc el rml_df que se ha macheado -> obtiene un grafo de RDFlib
-        3. A partir del grafo de rdflib anterior crear un dataframe de tripletas con columnas S, P, O (esto no se debería hacer pero nos vale de momento)
-        4. Filtrar el dataframe de tripletas con el pattern (utilizando los términos qu estén bounded, es decir, los que no son variables)
-        5. Devolver las tripletas (yield triples)
-
         Args:
           - pattern: The triple pattern (s, p, o) to search.
           - context: The query execution context.
@@ -92,13 +83,10 @@ class COTTASStore(Store):
         )
 
         # 7. Filtrado final
-        pattern = input("Introduce el pattern final (S, P u O): ")
-        filtered = filter_df_by_bounded_terms_any_position(df_triples, pattern)
+        filtered = filter_df_by_bounded_terms_any_position(df_triples, final_pattern)
 
         # 8. (Opcional) guardar resultado
         filtered.to_csv("filtered_templates.csv", index=False)
-
-
 
     def create(self, configuration):
         raise TypeError('The virt store is read only!')
